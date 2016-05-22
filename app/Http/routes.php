@@ -34,5 +34,7 @@ Route::get('/login/success',function(){
     return view('loginSuccess');
 });
 Route::get('/logout','LoginController@doLogout');
+Route::get('/member','MemberController@doMember');
+Route::get('/member','MemberController@doRecord');
 Route::get('/testController','TestController@showTest');
 
