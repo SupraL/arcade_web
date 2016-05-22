@@ -13,13 +13,6 @@
     <script src="{{ URL::asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
-	<style type="text/css">
-	div 2122{
-	width:1100px;
-	height:625px;
-	overflow: scroll
-	}
-	</style>
 </head>
 <body>
 @extends('header')
@@ -41,10 +34,10 @@
             <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><i class="fa fa-users" aria-hidden="true"></i> 關於我們</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><i class="fa fa-book" aria-hidden="true"> 服務條款</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><i class="fa fa-book" aria-hidden="true"></i> 服務條款</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-low-vision" aria-hidden="true"></i></i> 私隱政策</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-wpforms" aria-hidden="true"></i> 私隱政策</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -54,9 +47,7 @@
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
 						<pre >
-							<div class="2122">
-								test<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-							</div>
+test<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
             </div>
