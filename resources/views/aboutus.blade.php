@@ -31,13 +31,13 @@
 <div class="container">
     <ul class="nav nav-tabs tabs-3" role="tablist" style="margin-top: 15px;">
 	    <li class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 關於我們</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/account-multiple.png') }}"/> 關於我們</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/library-books.png') }}"/> 服務條款</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/comment-text-outline.png') }}"/> 服務條款</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> 私隱政策</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/book-open.png') }}"/> 私隱政策</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -46,7 +46,7 @@
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre>
+						<pre >
 							test
 						</pre>
                 </div>
