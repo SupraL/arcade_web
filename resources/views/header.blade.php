@@ -14,10 +14,10 @@
                 <li class="nav-item">
                     @if (Session::has('username'))
                         <li class="dropdown hidden-xs">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Session::get('username')}} <b class="caret"></b></a>
+                            <a href="/member" class="dropdown-toggle" data-toggle="dropdown">{{Session::get('username')}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider hidden-lg"></li>
-                                <li><a href="/member">帳號資訊</a></li>
+                                <li><a href="/member/info">帳號資訊</a></li>
                                 <li><a href="/member/record">交易記錄</a></li>
                             </ul>
                         </li>
