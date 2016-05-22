@@ -1,0 +1,21 @@
+.indexButton{
+    color: #FFFFFF;
+    background-color: #37474F;
+}
+.indexButton:hover{
+    color:#FFFFFF;
+    background-color: #263238;
+}
+.cancelButton{
+    color: #FFFFFF;
+    background-color: #9e9e9e;
+}
+.cancelButton:hover{
+    color:#FFFFFF;
+    background-color: #757575;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}

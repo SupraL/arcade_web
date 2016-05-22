@@ -1,0 +1,52 @@
+html,
+body {
+    height: 100%;
+}
+
+body{
+    font-family: sans-serif, "微軟正黑體";
+}
+nav ul li a{
+    font-size:17px;
+}
+.navbar-brand{
+    font-size:18px;
+}
+
+.navbar {
+    background-color: transparent !important;
+}
+.top-nav-collapse{
+    background-color: #1C2331 !important;
+}
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #1C2331 !important;
+    }
+}
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+
+.indexGameImage{
+    height: 100% !important;
+    width: 100% !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.indexButton{
+    color: #FFFFFF;
+    background-color: #37474F;
+}
+.indexButton:hover{
+    color:#FFFFFF;
+    background-color: #263238;
+}
