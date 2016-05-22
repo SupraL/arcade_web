@@ -19,6 +19,10 @@ Route::get('/','IndexController@showIndex');
 Route::get('/viewNotice/{id}','NoticeController@showNotice');
 Route::get('/viewNotice','AllNoticeController@showNotice');
 
+Route::get('/aboutus',function(){
+    return view('aboutus');
+});
+
 Route::post('/register','RegisterController@doReg');
 Route::get('/register',function(){
     return view('register');
