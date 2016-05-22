@@ -24,92 +24,51 @@
     <div class="container">
         <ol class="breadcrumb" style="padding: 10px">
             <li><a href="./">主頁</a></li>
-            <li class="active">遊戲公告</li>
+            <li class="active">關於我們</li>
         </ol>
     </div>
 </div>
 <div class="container">
     <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
+	    <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 關於我們</a>
+        </li>
         <li class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#tabGame1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/bns.ico') }}"/> 劍靈</a>
+            <a class="nav-link" data-toggle="tab" href="#tabGame1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/library-books.png') }}"/> 服務條款</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> AION</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 新天堂II</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame4" role="tab"><img height="30" width="30" src="{{ URL::asset('img/mxm.png') }}"/> MXM</a>
+            <a class="nav-link" data-toggle="tab" href="#tabGame2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> 私隱政策</a>
         </li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade in active" id="tabGame1" role="tabpanel">
             <div class="card">
                 <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
+                    <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                            @foreach($gameNoticeList1 as $notice)
-                                <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
         <div class="tab-pane fade" id="tabGame2" role="tabpanel">
             <div class="card">
                 <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
+                    <h3 class="h3-responsive">服務條款</h3>
                     <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList2 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
         <div class="tab-pane fade" id="tabGame3" role="tabpanel">
             <div class="card">
                 <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
+                    <h3 class="h3-responsive">私隱政策</h3>
                     <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList3 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="tabGame4" role="tabpanel">
-            <div class="card">
-                <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
-                    <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList4 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 </body>
 </html>
