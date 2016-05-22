@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="container">
-    <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
+    <ul class="nav nav-tabs tabs-3" role="tablist" style="margin-top: 15px;">
 	    <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 關於我們</a>
         </li>
