@@ -47,7 +47,7 @@
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
 						<pre >
-test<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>4<br><br><br><br><br><br><br><br>3<br><br>
+test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
             </div>
