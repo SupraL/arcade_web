@@ -46,7 +46,7 @@
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre>
+						<pre style="margin-right: 30px">
 test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
@@ -57,7 +57,7 @@ test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>
                 <div class="container">
                     <h3 class="h3-responsive">服務條款</h3>
                     <hr />
-						<pre>
+						<pre style="margin-right: 30px">
 							test
 						</pre>
                 </div>
@@ -68,7 +68,7 @@ test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>
                 <div class="container">
                     <h3 class="h3-responsive">私隱政策</h3>
                     <hr />
-						<pre>
+						<pre style="margin-right: 30px">
 							test
 						</pre>
                 </div>
