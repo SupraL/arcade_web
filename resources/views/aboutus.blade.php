@@ -30,41 +30,47 @@
 </div>
 <div class="container">
     <ul class="nav nav-tabs tabs-3" role="tablist" style="margin-top: 15px;">
-	    <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 關於我們</a>
-        </li>
-        <li class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#tabGame1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/library-books.png') }}"/> 服務條款</a>
+	    <li class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><i class="fa fa-users" aria-hidden="true"></i> 關於我們</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> 私隱政策</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><i class="fa fa-book" aria-hidden="true"></i> 服務條款</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-wpforms" aria-hidden="true"></i> 私隱政策</a>
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane fade in active" id="tabGame1" role="tabpanel">
+        <div class="tab-pane fade in active" id="tabus1" role="tabpanel">
             <div class="card">
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-                    .
+						<pre >
+test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
+						</pre>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="tabGame2" role="tabpanel">
+        <div class="tab-pane fade" id="tabus2" role="tabpanel">
             <div class="card">
                 <div class="container">
                     <h3 class="h3-responsive">服務條款</h3>
                     <hr />
-
+						<pre>
+							test
+						</pre>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="tabGame3" role="tabpanel">
+        <div class="tab-pane fade" id="tabus3" role="tabpanel">
             <div class="card">
                 <div class="container">
                     <h3 class="h3-responsive">私隱政策</h3>
                     <hr />
-
+						<pre>
+							test
+						</pre>
                 </div>
             </div>
         </div>
