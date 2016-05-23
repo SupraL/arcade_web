@@ -111,7 +111,7 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <input type="checkbox" id="chk_aggreement">
-                        <label for="chk_aggreement">我接受會員同意書</label>
+                        <label for="chk_aggreement">我接受並同意本工作室之<a href="aboutUs#tabus2">《服務條款及私隱政策》</a>。</label>
                     </div>
                 </div>
                 <center>
