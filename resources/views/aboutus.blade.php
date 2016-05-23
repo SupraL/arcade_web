@@ -19,7 +19,7 @@
             $("#tabus2").removeClass("active");
             $("#tabus3").removeClass("active");
             $("#tabus4").removeClass("active");
-                    var hash = window.location.hash.substring(1);
+            var hash = window.location.hash.substring(1);
             switch(hash){
                 case "tabus1":
                     $("#tabus1").addClass("active");
@@ -54,7 +54,7 @@
 </div>
 <div class="container">
     <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
-	    <li class="nav-item active">
+        <li class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><i class="fa fa-users" aria-hidden="true"></i> 關於我們</a>
         </li>
         <li class="nav-item">
