@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    © Copyright 2015-2016 Arcade Crafts 遊戲工作室. All Rights Reserved.
+                    © Copyright 2015-2016 Arcade Crafts 遊戲工作室. All Rights Reserved
                 </div>
                 <div class="col-md-4">
                     <div class="pull-right">
