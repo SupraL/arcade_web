@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="container">
-    <ul class="nav nav-tabs tabs-3" role="tablist" style="margin-top: 15px;">
+    <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
 	    <li class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#tabus1" role="tab"><i class="fa fa-users" aria-hidden="true"></i> 關於我們</a>
         </li>
