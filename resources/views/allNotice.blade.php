@@ -30,16 +30,16 @@
 </div>
 <div class="container">
     <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
-        <li class="nav-item active">
+        <li id="tab1" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#tabGame1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/bns.ico') }}"/> 劍靈</a>
         </li>
-        <li class="nav-item">
+        <li id="tab2" class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#tabGame2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> AION</a>
         </li>
-        <li class="nav-item">
+        <li id="tab3" class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 新天堂II</a>
         </li>
-        <li class="nav-item">
+        <li id="tab4" class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#tabGame4" role="tab"><img height="30" width="30" src="{{ URL::asset('img/mxm.png') }}"/> MXM</a>
         </li>
     </ul>
@@ -110,6 +110,49 @@
         </div>
     </div>
 </div>
+<script>
+    var hash = window.location.hash;
+    if(hash != ""){
+        $(".nav-item")[0].classList.remove("active");
+        $("#tabGame1")[0].classList.remove("active");
+        switch(hash){
+            case "#game1":
+                $(".nav-item")[0].classList.add("active");
+                $("#tabGame1")[0].classList.add("active");
+                $("#tabGame1")[0].classList.add("in");
+                break;
+            case "#game2":
+                $(".nav-item")[1].classList.add("active");
+                $("#tabGame2")[0].classList.add("active");
+                $("#tabGame2")[0].classList.add("in");
+                break;
+            case "#game3":
+                $(".nav-item")[2].classList.add("active");
+                $("#tabGame3")[0].classList.add("active");
+                $("#tabGame3")[0].classList.add("in");
+                break;
+            case "#game4":
+                $(".nav-item")[3].classList.add("active");
+                $("#tabGame4")[0].classList.add("active");
+                $("#tabGame4")[0].classList.add("in");
+                break;
+            default:
+                $(".nav-item")[0].classList.add("active");
+                $("#tabGame1")[0].classList.add("active");
+                $("#tabGame1")[0].classList.add("in");
+                break;
+        }
+    }
+    function removeClass(ele,cls) {
+        if (hasClass(ele,cls)) {
+            var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+            ele.className=ele.className.replace(reg,' ');
+        }
+    }
+    function hasClass(ele,cls) {
+        return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+    }
 
+</script>
 </body>
 </html>
