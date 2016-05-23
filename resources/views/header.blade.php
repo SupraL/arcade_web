@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand waves-effect waves-light" href="./">ArcadeCrafts</a>
+            <a class="navbar-brand waves-effect waves-light" href="{{ URL::asset('/') }}">ArcadeCrafts</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -17,12 +17,12 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Session::get('username')}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider hidden-lg"></li>
-                                <li><a href="./member">帳號資訊</a></li>
-                                <li><a href="./member/record">交易記錄</a></li>
+                                <li><a href="{{ URL::asset('/member') }}">帳號資訊</a></li>
+                                <li><a href="{{ URL::asset('/member/record') }}">交易記錄</a></li>
                             </ul>
                         </li>
                     @else
-                        <a class="nav-link" href="./register">免費註冊</a>
+                        <a class="nav-link" href="{{ URL::asset('/register') }}">免費註冊</a>
                     @endif
                 </li>
                 <li class="nav-item">
@@ -30,9 +30,9 @@
                 </li>
                 <li class="nav-item">
                     @if (Session::has('username'))
-                        <a class="nav-link" href="./logout">登出</a>
+                        <a class="nav-link" href="{{ URL::asset('/logout') }}">登出</a>
                         @else
-                        <a class="nav-link" href="./login">登入</a>
+                        <a class="nav-link" href="{{ URL::asset('/login') }}">登入</a>
                     @endif
                 </li>
             </ul>
