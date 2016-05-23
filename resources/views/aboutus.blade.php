@@ -13,8 +13,32 @@
     <script src="{{ URL::asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
+    <script>
+        if(window.location.hash) {
+            $("#tabus1").removeClass("active");
+            $("#tabus2").removeClass("active");
+            $("#tabus3").removeClass("active");
+            $("#tabus4").removeClass("active");
+                    var hash = window.location.hash.substring(1);
+            switch(hash){
+                case "tabus1":
+                    $("#tabus1").addClass("active");
+                    break;
+                case "tabus2":
+                    $("#tabus2").addClass("active");
+                    break;
+                case "tabus3":
+                    $("#tabus3").addClass("active");
+                    break;
+                case "tabus4":
+                    $("#tabus4").addClass("active");
+                    break;
+            }
+        }
+    </script>
 </head>
-<body>
+<body onSelectStart="event.returnValue=false">
+
 @extends('header')
 <br/>
 <br/>
@@ -37,7 +61,7 @@
             <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><i class="fa fa-book" aria-hidden="true"></i> 服務條款</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-institution" aria-hidden="true"></i> 服務政策</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-tty" aria-hidden="true"></i> 服務政策</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#tabus4" role="tab"><i class="fa fa-bank" aria-hidden="true"></i> 私隱政策</a>
@@ -49,7 +73,7 @@
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre style="margin-right: 30px">
+						<pre style="margin-right: 30px;word-wrap: break-word">
 test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
@@ -60,7 +84,7 @@ test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>
                 <div class="container">
                     <h3 class="h3-responsive">服務條款</h3>
                     <hr />
-						<pre style="margin-right: 30px">
+						<pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
 本網站—— Arcade Crafts 遊戲工作室（以下簡稱本工作室）為提供資訊與服務之目的而設置。在瀏覽本網站之前，請詳細閱讀本服務條款；倘若您未滿二十歲，則請您與您的法定代理人共同詳細閱讀本服務條款。如果您或您的法定代理人不同意服務條款的規定，則請您立即停止瀏覽或使用本工作室提供之任何資訊與服務。一旦您繼續瀏覽或使用本工作室提供之任何資訊與服務，則視為您與您的法定代理人同意遵守本服務條款。本工作室得隨時更改本工作室之內容與服務條款，且所有修改將於本服務條款刊登後生效。倘若您或您的法定代理人不同意本工作室對於網站內容與服務條款所為之更改，亦請您立刻停止瀏覽或使用本工作室提供之任何資訊與服務。本服務條款所提及之其他由本工作室製作的使用準則、條款、協議、交易頁面所呈現之相關資訊、網站活動辦法及其他應注意事項，亦為本服務條款的一部份。
 
 免責聲明
@@ -140,12 +164,12 @@ test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade in active" id="tabus3" role="tabpanel">
+        <div class="tab-pane fade" id="tabus3" role="tabpanel">
             <div class="card">
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre style="margin-right: 30px">
+						<pre style="margin-right: 30px;word-wrap: break-word;">
 test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
@@ -156,7 +180,7 @@ test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>
                 <div class="container">
                     <h3 class="h3-responsive">私隱政策</h3>
                     <hr />
-						<pre style="margin-right: 30px">
+						<pre style="margin-right: 30px;word-wrap: break-word;">
 							test
 						</pre>
                 </div>
