@@ -13,29 +13,6 @@
     <script src="{{ URL::asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
-    <script>
-        if(window.location.hash) {
-            $("#tabus1").removeClass("active");
-            $("#tabus2").removeClass("active");
-            $("#tabus3").removeClass("active");
-            $("#tabus4").removeClass("active");
-            var hash = window.location.hash.substring(1);
-            switch(hash){
-                case "tabus1":
-                    $("#tabus1").addClass("active");
-                    break;
-                case "tabus2":
-                    $("#tabus2").addClass("active");
-                    break;
-                case "tabus3":
-                    $("#tabus3").addClass("active");
-                    break;
-                case "tabus4":
-                    $("#tabus4").addClass("active");
-                    break;
-            }
-        }
-    </script>
 </head>
 <body onSelectStart="event.returnValue=false">
 
@@ -282,5 +259,39 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
         </div>
     </div>
 </div>
+<script>
+    var hash = window.location.hash;
+    if(hash != ""){
+        $(".nav-item")[0].classList.remove("active");
+        $("#tabus1")[0].classList.remove("active");
+        switch(hash){
+            case "#tabus1":
+                $(".nav-item")[0].classList.add("active");
+                $("#tabus1")[0].classList.add("active");
+                $("#tabus1")[0].classList.add("in");
+                break;
+            case "#tabus2":
+                $(".nav-item")[1].classList.add("active");
+                $("#tabbus2")[0].classList.add("active");
+                $("#tabus2")[0].classList.add("in");
+                break;
+            case "#tabus3":
+                $(".nav-item")[2].classList.add("active");
+                $("#tabus3")[0].classList.add("active");
+                $("#tabus3")[0].classList.add("in");
+                break;
+            case "#tabus4":
+                $(".nav-item")[3].classList.add("active");
+                $("#tabus4")[0].classList.add("active");
+                $("#tabus4")[0].classList.add("in");
+                break;
+            default:
+                $(".nav-item")[0].classList.add("active");
+                $("#tabus1")[0].classList.add("active");
+                $("#tabus1")[0].classList.add("in");
+                break;
+        }
+    }
+</script>
 </body>
 </html>
