@@ -272,7 +272,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
                 break;
             case "#tabus2":
                 $(".nav-item")[1].classList.add("active");
-                $("#tabbus2")[0].classList.add("active");
+                $("#tabus2")[0].classList.add("active");
                 $("#tabus2")[0].classList.add("in");
                 break;
             case "#tabus3":
