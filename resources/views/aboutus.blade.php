@@ -37,7 +37,7 @@
             <a class="nav-link" data-toggle="tab" href="#tabus2" role="tab"><i class="fa fa-book" aria-hidden="true"></i> 服務條款</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-wpforms" aria-hidden="true"></i> 私隱政策</a>
+            <a class="nav-link" data-toggle="tab" href="#tabus3" role="tab"><i class="fa fa-bank" aria-hidden="true"></i> 私隱政策</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -46,7 +46,7 @@
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre >
+						<pre>
 test<br><br><br><br><br><br><br>3252352332><br>4<br><br><br><br><br><br><br><br>3<br><br>
 						</pre>
                 </div>
