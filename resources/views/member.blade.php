@@ -46,9 +46,9 @@
             <div class="card">
                 <h4 class="panel-heading">帳戶資料</h4>
                 <div class="card-block container">
-                    <label style="font-size: 18px;color:#000000">用戶名稱：</label><br/>
-                    <label style="font-size: 18px;color:#000000">電郵地址：</label><br/>
-                    <label style="font-size: 18px;color:#000000">帳號類型：</label><br/>
+                    <label style="font-size: 18px;color:#000000">用戶名稱：{{Session::get("username")}}</label><br/>
+                    <label style="font-size: 18px;color:#000000">電郵地址：{{Session::get("email")}}</label><br/>
+                    <label style="font-size: 18px;color:#000000">帳號類型：<span class="label label-pill bg-primary">{{Session::get("typeName")}}</span></label><br/>
                     <a href="#" class="btn btn-primary">更改密碼</a>
                 </div>
             </div>
