@@ -18,8 +18,8 @@ class LoginController extends Controller
         $username = Input::get('username');
         $password = Input::get('password');
         
-        $userCount = DB::table('users')->where('username',$username)->where('password',$password)->count();
-        $userData = DB::table('users')->where('username',$username)->where('password',$password)->first();
+        $userCount = DB::table('users')->where('users.password',$password)->count();
+        $userData = DB::table('users')->join("usertype","users.typeID","=","usertype.typeid")->where('users.username',$username)->where('username',$username)->where('password',$password)->first();
         if($userCount != 1)
             $errorCode = 1;
         
@@ -28,6 +28,7 @@ class LoginController extends Controller
             Session::put("username",$userData->username);
             Session::put("email",$userData->email);
             Session::put("typeID",$userData->typeID);
+            Session::put("typeName",$userData->typeName);
         }
         return view('login')->with('errorCode',$errorCode);
     }
