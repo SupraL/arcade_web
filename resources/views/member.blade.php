@@ -86,5 +86,34 @@
         </div>
     </div>
 </div>
+<script>
+    var hash = window.location.hash;
+    if(hash != "") {
+        $(".nav-item")[0].classList.remove("active");
+        $("#tabPage1")[0].classList.remove("active");
+        switch (hash) {
+            case "#info":
+                $(".nav-item")[0].classList.add("active");
+                $("#tabPage1")[0].classList.add("active");
+                $("#tabPage1")[0].classList.add("in");
+                break;
+            case "#redeem":
+                $(".nav-item")[1].classList.add("active");
+                $("#tabPage2")[0].classList.add("active");
+                $("#tabPage2")[0].classList.add("in");
+                break;
+            case "#record":
+                $(".nav-item")[2].classList.add("active");
+                $("#tabPage3")[0].classList.add("active");
+                $("#tabPage3")[0].classList.add("in");
+                break;
+            default:
+                $(".nav-item")[0].classList.add("active");
+                $("#tabPage1")[0].classList.add("active");
+                $("#tabPage1")[0].classList.add("in");
+                break;
+        }
+    }
+</script>
 </body>
 </html>
