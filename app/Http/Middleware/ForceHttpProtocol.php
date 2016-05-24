@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\URL;
 
 class ForceHttpProtocol {
     public function handle($request, Closure $next) {
-        //!$request->secure()
         $domain = $_SERVER['SERVER_NAME'];
         if($domain == "localhost"){
             if (!$request->secure()) {
