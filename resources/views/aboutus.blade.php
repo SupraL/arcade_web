@@ -50,13 +50,51 @@
                 <div class="container">
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
-						<pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
+                    <pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
 <h4 class="h4-responsive">介紹</h4>
-Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中，由幾位具備數年不同的電腦編程經驗之年輕人士組成。
-<h4 class="h4-responsive">創立目的</h4>
-本工作室成員均熱愛電子遊戲，希望透過成立工作室，把舊時曾經熱門的遊戲修改並開放給廣大玩家。
+Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中，由幾位具備數年不同的電腦及網頁程式編寫經驗的年輕人組成。
+<h4 class="h4-responsive">理念</h4>
+本工作室成員均熱愛電子遊戲，希望透過成立工作室，把舊時曾經熱門的遊戲重新展現於廣大玩家眼前，延續該遊戲的歷程。
 此外，亦希望籍著這次的機會重新聚集一班有熱情、有興趣的玩家，一同分享遊戲。
-						</pre>
+我們由2015年中開始籌劃、收集資源、編寫網頁及客戶端、測試及改良舊有遊戲玩法，直到現在我們用了差不多一年的時間完成數個遊戲的私服製作。
+伺服器全數由成員自資，並沒有任何的收益，全部只有各成員的興趣及熱情。
+<h4 class="h4-responsive">成員</h4>
+排名不分先後：
+                            <div class="col-md-12">
+    <!--First review-->
+    <div class="media">
+        <a class="media-left waves-light">
+            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">John Doe</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+        </div>
+    </div>
+
+                                <!--Second review-->
+    <div class="media">
+        <a class="media-left waves-light">
+            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-2.jpg" alt="Generic placeholder image">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">Nathan Casie</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+        </div>
+    </div>
+
+                                <!--Second review-->
+    <div class="media">
+        <a class="media-left waves-light">
+            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">Dave Snow</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+        </div>
+    </div>
+                                </div>
+                        </pre>
                 </div>
             </div>
         </div>
@@ -227,7 +265,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
 - 第一次：經查核帳戶永久停權
 
 帳號停權長度將由本工作室依事件個別判定。
-遭受的處分可能依事件嚴重性而不同於上例，處分將由本工作室依事件個別判定。
+遭受的處分可能依事件嚴重性而不同於上例，處分將由本工作室依事件個別判定，對於最後審議結果，本工作室保留一切最終決定權。
 
 (4) 帳戶處分爭議
 如有關於帳戶約束處分的問題或異議，請依官方網站的資訊聯絡客戶服務單位。請記得附上所有相關資料，我們會盡快回覆用戶。
@@ -275,6 +313,7 @@ Arcade Crafts 遊戲工作室 (以下簡稱「本工作室」或「我們」) �
 除此之外，閣下的個人資料可能披露予對我們有保密責任的代理人或向我們提供與業務運作有關的第三方服務提供者，例如行政、電訊、資訊科技支援、監控在線技術、核數、會計、廣告、市場研究及推廣等。
 代理人及第三方服務提供者均對我們負有保密責任，並只可就上述第2條所指明的目的，而非為本身的目的 (包括直銷用途)，使用閣下的個人資料。
 我們亦可能會就上述第2條所指明的目的或應法律要求，披露及轉移閣下的個人資料予我們所聘用的專業顧問、執法機構、保險公司、政府部門和監管機構及其他組織。
+這些個人資料只限於已獲本工作室授權的工作人員或對本工作室附有保密責任的合作商授權的工作人員才有權取用。這些已獲本工作室或其相關合作商授權的工作人員在取用這些個人資料時，必須遵守本「收集個人資料聲明」。
 
 (4) 個人資料的保存期
 凡沒有登錄或充值超過九個月以上的會員帳號或六個月沒有登入過的遊戲帳號，本工作室有權刪除該帳號，閣下將會失去使用我們服務的權利，刪除前將不會通知閣下，閣下不得因此而要求任何補償或賠償。
@@ -284,7 +323,6 @@ Arcade Crafts 遊戲工作室 (以下簡稱「本工作室」或「我們」) �
 (5) 保安措施
 我們承諾對閣下的個人資料嚴格保密，並僅在為實現上述目的/用途所必需的範圍內使用。我們承諾將不故意洩漏、篡改、毀損、出售或非法向他人提供閣下的個人資料。
 在登入或註冊arcadecrafts.net時，你的個人資料會被加密及傳送至一個專用的加密雲端伺服器，再利用電子方式儲存，並加有密碼保護。我們亦會在每3 ~ 7天將資料上傳至加密的雲端伺服器作備份儲存。
-這些個人資料只限於已獲本工作室授權的工作人員或對本工作室附有保密責任的合作商授權的工作人員才有權取用。這些已獲本工作室或其相關合作商授權的工作人員在取用這些個人資料時，必須遵守本「收集個人資料聲明」。
 我們非常重視閣下的個人資料安全。我們設有適當的技術及實體防護措施(例如SSL加密技術/密碼加密驗證技術)來保護閣下的個人資料的安全，防範意外或非法破壞或遺失、竄改、未授權揭露或存取、使用，以及其他違法處理我們持有之資料的所有方式。但由於線上網絡不是全然安全的環境，因此我們無法保證閣下透過遊戲所傳輸的資訊不會因為我們的防護措施遭到入侵而受到他人存取、揭露、竄改或破壞。
 如閣下在"會員登入"中設定自動填寫會員帳號和會員密碼，請確保閣下將有存儲arcadecrafts.net的個人電腦或其他硬件設備給予其他人士前，例如產品保養及維修服務，將有關設定取消。
 
@@ -328,6 +366,8 @@ Arcade Crafts 遊戲工作室 (以下簡稱「本工作室」或「我們」) �
         </div>
     </div>
 </div>
+@extends('footer')
+<div id="fb-root"></div>
 <script>
     var hash = window.location.hash;
     if(hash != ""){
