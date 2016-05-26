@@ -41,7 +41,7 @@ return [
 
     'url' => env('APP_URL', 'http://arcadecrafts.net'),
     
-    'bbsUrl' => env('BBS_URL','http://localhost/forum/'),
+    'bbsUrl' => env('BBS_URL','http://localhost/bbs/'),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
