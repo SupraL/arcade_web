@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models;
 use DB;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +15,7 @@ class LoginController extends Controller
     public function doDiscuzLogin(){
         $username = Input::get('username');
         $password = Input::get('password');
-        $url = 'http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/login.php';
+        $url = Config::get('app.bbsUrl').'/plugin/reg/login.php';
         $data = array('username' => $username, 'password' => $password);
         $options = array(
             'http' => array(

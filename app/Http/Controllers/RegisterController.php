@@ -35,7 +35,7 @@ class RegisterController extends Controller
             $errorCode = -300;
 
         if($errorCode == -1000){
-            $errorCode = file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/register.php?username='.$username.'&password='.$password.'&email='.$email);
+            $errorCode = file_get_contents(Config::get('app.bbsUrl').'/plugin/reg/register.php?username='.$username.'&password='.$password.'&email='.$email);
 
             /*DB::table('users')->insert(
                 array('userID' => $userID,
