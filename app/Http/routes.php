@@ -30,7 +30,7 @@ Route::get('/register',function(){
 Route::get('/download',function(){
     return view('download');
 });
-Route::post('/login','LoginController@doLogin');
+Route::post('/login','LoginController@doDiscuzLogin');
 Route::get('/login',function(){
     return view('login');
 });

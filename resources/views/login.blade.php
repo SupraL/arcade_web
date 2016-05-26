@@ -19,10 +19,10 @@
 @extends('header')
 <?php
 if(isset($errorCode)){
-    if($errorCode != -1){
+    if($errorCode < 0){
         echo "<script>toastr.warning('帳號或密碼錯誤!');</script>";
     }
-    if($errorCode == -1){
+    if($errorCode > 0){
         echo '<meta http-equiv="refresh" content="0; url=./login/success" />';
     }
 }

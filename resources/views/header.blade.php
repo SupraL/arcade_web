@@ -1,3 +1,8 @@
+<?php
+    /*$opts = array('http' => array('header'=> 'Cookie: ' . $_SERVER['HTTP_COOKIE']."\r\n"));
+    $context = stream_context_create($opts);
+    $userData = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/checkLogin.php', false, $context));*/
+?>
 <nav class="navbar unique-color-dark navbar-fixed-top z-depth-1" role="navigation">
     <div class="container">
         <div class="navbar-header">
