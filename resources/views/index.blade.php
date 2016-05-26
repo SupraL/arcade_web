@@ -171,7 +171,7 @@
                                 </div>
                             </div>
                         </li>-->
-                        <script type="text/javascript" src="https://localhost/forum/api.php?mod=js&bid=3"></script>
+                        <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}/api.php?mod=js&bid=3"></script>
                     </ul>
                 </div>
             </div>
