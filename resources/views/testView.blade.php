@@ -12,12 +12,6 @@
     <title>Title</title>
 </head>
 <body>
-<?php
-        var_dump($userList);
-        //foreach($userList as $user){
-         //   var_dump($user->notices);
-        //}
-
-?>
+testEmailll
 </body>
 </html>
