@@ -12,6 +12,7 @@
     <script src="{{ secure_asset('js/jquery.min.js')}}"></script>
     <script src="{{ secure_asset('js/bootstrap.min.js')}}"></script>
     <script src="{{ secure_asset('js/mdb.js')}}"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
     <script>
@@ -49,7 +50,7 @@
     </progress>
     <?php
         if(isset($errorCode)){
-            if($errorCode != -1000){
+            if($errorCode < 0){
                 echo "<script>toastr.warning('註冊程序尚未完成!');</script>";
             }
             switch($errorCode){
@@ -61,6 +62,9 @@
                     break;
                 case "-300":
                     echo "<script>toastr.error('帳號或密碼不符合6位或以上長度的要求!');</script>";
+                    break;
+                case "-999":
+                    echo "<script>toastr.error('Recaptcha驗證狀態並不正確!');</script>";
                     break;
                 case "-1":
                     echo "<script>toastr.error('請檢查您的帳號名稱是否包含非法字符!');</script>";
@@ -122,7 +126,7 @@
                         <div class="input-field">
                             <i class="material-icons prefix">lock</i>
                             <input id="conPassword" name="conPassword" type="text" class="validate">
-                            <label for="icon_prefix">確應密碼</label>
+                            <label for="icon_prefix">確認密碼</label>
                         </div>
                     </div>
                 </div>
@@ -130,6 +134,11 @@
                     <div class="col-md-6 col-md-offset-3">
                         <input type="checkbox" id="chk_aggreement">
                         <label for="chk_aggreement">我接受並同意本工作室之<a href="aboutUs#tabus2">《服務條款及政策》</a>。</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="g-recaptcha" data-sitekey="6Lco-SATAAAAAKQCbgY2oCgHCcHgYOqfC5O1_zok"></div>
                     </div>
                 </div>
                 <center>
