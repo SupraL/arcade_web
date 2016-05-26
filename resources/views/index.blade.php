@@ -121,7 +121,7 @@
                     <h5 class="h5-responsive"><b>玩家論壇</b><i class="fa fa-ellipsis-h fa-lg right"></i></h5>
                     <hr>
                     <ul class="list-group">
-                        <li class="list-group-item">
+                        <!--<li class="list-group-item">
                             <div class="row">
                                 <div class="col-md-8">
                                     asd
@@ -170,7 +170,8 @@
                                     2016-05-18
                                 </div>
                             </div>
-                        </li>
+                        </li>-->
+                        <script type="text/javascript" src="https://localhost/forum/api.php?mod=js&bid=3"></script>
                     </ul>
                 </div>
             </div>

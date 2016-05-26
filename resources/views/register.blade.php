@@ -49,23 +49,41 @@
     </progress>
     <?php
         if(isset($errorCode)){
-            if($errorCode != -1){
+            if($errorCode != -1000){
                 echo "<script>toastr.warning('註冊程序尚未完成!');</script>";
             }
             switch($errorCode){
-                case "1":
+                case "-100":
                     echo "<script>toastr.error('兩次輸入的密碼並不一致!');</script>";
                     break;
-                case "2":
+                case "-200":
                     echo "<script>toastr.error('帳號或密碼中不能包含特殊符號!');</script>";
                     break;
-                case "3":
+                case "-300":
                     echo "<script>toastr.error('帳號或密碼不符合6位或以上長度的要求!');</script>";
                     break;
                 case "-1":
-                    echo "<script>toastr.success('帳號註冊成功!<br/>5秒後會自動跳轉至登入頁面');</script>";
-                    echo '<meta http-equiv="refresh" content="5; url=./" />';
+                    echo "<script>toastr.error('請檢查您的帳號名稱是否包含非法字符!');</script>";
                     break;
+                case "-2":
+                    echo "<script>toastr.error('請檢查您的註冊資訊是否包含非法字符!');</script>";
+                    break;
+                case "-3":
+                    echo "<script>toastr.error('很遺憾，用戶名稱已經存在!');</script>";
+                    break;
+                case "-4":
+                    echo "<script>toastr.error('請檢查您的Email格式是否正確!');</script>";
+                    break;
+                case "-5":
+                    echo"<script>toastr.error('該Email並不允許用作註冊本系統之用!');</script>";
+                    break;
+                case "-6":
+                    echo "<script>toastr.error('該Email地址已被註冊!');</script>";
+                    break;
+            }
+            if($errorCode > 0 ){
+                echo "<script>toastr.success('帳號註冊成功!<br/>5秒後會自動跳轉至登入頁面');</script>";
+                echo '<meta http-equiv="refresh" content="5; url=./" />';
             }
         }
     ?>

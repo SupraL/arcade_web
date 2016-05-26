@@ -15,7 +15,7 @@ class RegisterController extends Controller
          * 3 = username or password length less than 6
          * -1 = success
          * */
-        $errorCode = -1;
+        $errorCode = -1000;
         $acpwRegPattern = '/^\w+$/';
 
         $username = Input::get('username');
@@ -26,16 +26,18 @@ class RegisterController extends Controller
         $userID = 'usr'.sprintf("%05d",(intval(substr($userID,-5))+1));
 
         if($password != $confirmPassword)
-            $errorCode = 1;
+            $errorCode = -100;
 
         if(!preg_match($acpwRegPattern,$username) || !preg_match($acpwRegPattern,$password))
-            $errorCode = 2;
+            $errorCode = -200;
 
-        if(strlen($username) < 6 || strlen($password) < 6)
-            $errorCode = 3;
+        if(strlen($username) < 3 || strlen($password) < 6)
+            $errorCode = -300;
 
-        if($errorCode == -1){
-            DB::table('users')->insert(
+        if($errorCode == -1000){
+            $errorCode = file_get_contents('http://localhost/forum/plugin/reg/register.php?username='.$username.'&password='.$password.'&email='.$email);
+
+            /*DB::table('users')->insert(
                 array('userID' => $userID,
                     'typeID' => 'typ00002',
                     'username' => $username,
@@ -43,7 +45,7 @@ class RegisterController extends Controller
                     'email' => $email,
                     'cashPoint' => '0',
                     'userIcon' => '')
-            );
+            );*/
         }
         return view('register')->with('errorCode',$errorCode);
     }

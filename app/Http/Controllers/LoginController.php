@@ -18,8 +18,8 @@ class LoginController extends Controller
         $username = Input::get('username');
         $password = Input::get('password');
         
-        $userCount = DB::table('users')->where('users.password',$password)->count();
-        $userData = DB::table('users')->join("usertype","users.typeID","=","usertype.typeid")->where('users.username',$username)->where('username',$username)->where('password',$password)->first();
+        $userCount = DB::table('users')->join("usertype","users.typeID","=","usertype.typeid")->where('users.password',$password)->where('usertype.typeName','<>','admin')->count();
+        $userData = DB::table('users')->join("usertype","users.typeID","=","usertype.typeid")->where('users.username',$username)->where('username',$username)->where('password',$password)->where('usertype.typeName','<>','admin')->first();
         if($userCount != 1)
             $errorCode = 1;
         

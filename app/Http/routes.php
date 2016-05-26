@@ -45,4 +45,5 @@ Route::get('/testController','TestController@showTest');
 Route::get('/admin', function(){
    return view('/adminView/login');
 });
+Route::post('/admin','Admin\LoginController@doLogin');
 
