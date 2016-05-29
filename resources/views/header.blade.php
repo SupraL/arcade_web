@@ -18,6 +18,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
                     @if (Session::has('username'))
+                        <a class="nav-link" href="{{ URL::asset('/shop') }}">商店</a>
+                    @endif
+                    @if (Session::has('username'))
                         <li class="dropdown hidden-xs">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Session::get('username')}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">

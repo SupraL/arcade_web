@@ -121,56 +121,6 @@
                     <h5 class="h5-responsive"><b>玩家論壇</b><i class="fa fa-ellipsis-h fa-lg right"></i></h5>
                     <hr>
                     <ul class="list-group">
-                        <!--<li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    asd
-                                </div>
-                                <div class="col-md-4">
-                                    2016-05-18
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    asd
-                                </div>
-                                <div class="col-md-4">
-                                    2016-05-18
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    asd
-                                </div>
-                                <div class="col-md-4">
-                                    2016-05-18
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    asd
-                                </div>
-                                <div class="col-md-4">
-                                    2016-05-18
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-8">
-                                    asd
-                                </div>
-                                <div class="col-md-4">
-                                    2016-05-18
-                                </div>
-                            </div>
-                        </li>-->
                         <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}/api.php?mod=js&bid=3"></script>
                     </ul>
                 </div>
