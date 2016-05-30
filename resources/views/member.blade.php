@@ -17,6 +17,23 @@
 </head>
 <body>
 @extends('header')
+<?php
+        if(Session::has('errorCode')){
+            $type = Session::get('type');
+            $errorCode = Session::get('errorCode');
+            $cashCodeData = Session::get('cashCodeData');
+            if($type == "redeem"){
+                switch($errorCode){
+                    case "1":
+                        echo "<script>toastr.warning('序號錯誤!');</script>";
+                        break;
+                    case "-1":
+                        echo "<script>toastr.success('恭喜您獲得 $cashCodeData->productName $cashCodeData->quantity 件!');</script>";
+                        break;
+                }
+            }
+        }
+?>
 <br/>
 <br/>
 <br/>
@@ -58,16 +75,19 @@
                 <div class="container">
                     <h4 class="h4-responsive">輸入您的序號</h4>
                     <hr/>
-                    <div class="row">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="input-field">
-                                <i class="material-icons prefix">credit_card</i>
-                                <input id="password" name="password" type="text" class="validate">
-                                <label for="icon_prefix">序號</label>
+                    <form action="./redeemCode" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">credit_card</i>
+                                    <input id="cashcode" name="cashcode" type="text" class="validate">
+                                    <label for="icon_prefix">序號</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <center><button type="submit" class="btn indexButton" id="btnSubmit">儲值</button></center>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <center><button type="submit" class="btn indexButton" id="btnSubmit">儲值</button></center>
+                    </form>
                 </div>
             </div>
         </div>

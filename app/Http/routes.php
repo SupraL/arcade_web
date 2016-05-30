@@ -41,7 +41,9 @@ Route::get('/logout','LoginController@doLogout');
 Route::get('/member','MemberController@doMember');
 Route::get('/mailTest','MailController@doSendMail');
 Route::get('/shop','ShopController@doShop');
+Route::get('/viewProduct/{id}','ShopController@doProductDetails');
 Route::get('/image/{id}','ImageController@getImg');
+Route::post('/redeemCode','RedeemController@doRedeem');
 
 Route::get('/testController','TestController@showTest');
 
@@ -50,3 +52,5 @@ Route::get('/admin', function(){
    return view('/adminView/login');
 });
 Route::post('/admin','Admin\LoginController@doLogin');
+Route::get('/admin/index','Admin\IndexController@doIndex');
+Route::get('/admin/redeemCode','Admin\RedeemController@showRedeemPage');

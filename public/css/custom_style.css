@@ -17,8 +17,29 @@ body {
     color:#FFFFFF;
     background-color: #757575;
 }
+.btn:hover{
+    color:#FFFFFF;
+}
 
 .col-centered{
     float: none;
     margin: 0 auto;
+}
+
+.affix {
+    top: 20px;
+}
+.mAffix{
+    width: 262px !important;
+}
+
+.jumbotron{
+    background-color:#fff;
+    box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.verticalContainer{
+    margin-left:260px;
+    margin-top:20px;
+    margin-right:20px;
 }

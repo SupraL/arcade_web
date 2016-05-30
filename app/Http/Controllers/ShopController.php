@@ -11,4 +11,8 @@ class ShopController extends Controller
         $gameList = DB::table('games')->get();
         return view('shopIndex')->with("productList",$productList)->with("gameList",$gameList);
     }
+    public function doProductDetails($id){
+        $productData = DB::table('products')->join('games','products.gameID','=','games.gameID')->where('products.productID',$id)->first();
+        return view('viewProduct')->with('productData',$productData);
+    }
 }

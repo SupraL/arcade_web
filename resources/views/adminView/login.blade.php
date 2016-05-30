@@ -15,6 +15,16 @@
     <title>ArcadeCrafts</title>
 </head>
 <body>
+<?php
+if(isset($errorCode)){
+    if($errorCode == 1){
+        echo "<script>toastr.warning('帳號或密碼錯誤!');</script>";
+    }
+    if($errorCode == -1){
+        echo '<meta http-equiv="refresh" content="0; url=./admin/index" />';
+    }
+}
+?>
 <div class="container">
     <div class="col-md-7 col-md-offset-2" style="margin-top:20px">
         <div class="card testimonial-card">

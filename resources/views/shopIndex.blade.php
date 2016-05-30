@@ -64,11 +64,14 @@
                                     <div class="mask"> </div>
                                 </a>
                             </div>
+                            <div class="action-buttons">
+                                <a class="btn-floating btn-small blue"><i class="fa fa-cart-plus"></i></a>
+                            </div>
                             <div class="card-title">
                                 <h5 class="card-title" style="color:#000000;margin-left:10px">{{$product->productName}} <div class="pull-right" style="margin-right:5px;"><i class="material-icons">attach_money</i>{{$product->price}}</div></h5>
                                 <pre style="height:72px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px">{{$product->description}}</pre>
                                 <hr style="margin-bottom:5px"/>
-                                <center><button class="btn indexButton">立即購買</button></center>
+                                <center><a class="btn stylish-color-dark" href="./viewProduct/{{$product->productID}}" style="color:#FFFFFF">詳細資料</a><button class="btn indexButton">立即購買</button></center>
                             </div>
                         </div>
                     </div>
