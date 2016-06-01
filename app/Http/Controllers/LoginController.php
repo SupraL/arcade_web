@@ -34,6 +34,9 @@ class LoginController extends Controller
             Session::put("userID",$userData[0]);
             Session::put("username",$userData[1]);
             Session::put("email",$userData[3]);
+            
+            $userList = DB::table('users')->where('userID',$userData[0])->first();
+            Session::put("cashPoint",$userList->cashPoint);
         }
         return view('login')->with('errorCode',$userData[0]);
     }

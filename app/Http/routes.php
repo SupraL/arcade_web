@@ -44,6 +44,8 @@ Route::get('/shop','ShopController@doShop');
 Route::get('/viewProduct/{id}','ShopController@doProductDetails');
 Route::get('/image/{id}','ImageController@getImg');
 Route::post('/redeemCode','RedeemController@doRedeem');
+Route::get('/buyCash','BuyCashController@');
+Route::post('/placeOrder','ShopController@doPlaceOrder');
 
 Route::get('/testController','TestController@showTest');
 
@@ -54,3 +56,4 @@ Route::get('/admin', function(){
 Route::post('/admin','Admin\LoginController@doLogin');
 Route::get('/admin/index','Admin\IndexController@doIndex');
 Route::get('/admin/redeemCode','Admin\RedeemController@showRedeemPage');
+Route::post('/admin/redeemCode','Admin\RedeemController@doRedeem');

@@ -37,24 +37,44 @@
 </div>
 <div class="container">
     <div class="jumbotron product-panel">
-        <div class="row">
-            <div class="col-md-6">
-                <img class="img-fluid" src="../image/{{$productData->productID}}" style="width:100%;height:100%">
+        <form action="../placeOrder" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="../image/{{$productData->productID}}" style="width:100%;height:100%">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="h4-responsive">{{$productData->productName}} <div class="pull-right">${{$productData->price}}</div></h4>
+                        <select>
+                            <option value="" disabled>購買選項</option>
+                            <option value="1" selected>直接購買</option>
+                            <option value="2">送禮</option>
+                        </select>
+                        <hr/>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="h5-responsive">付款方法</h5>
+                        <div class="col-md-4">
+                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_bank" checked>
+                            <label for="radio_bank">銀行轉帳</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_paypal">
+                            <label for="radio_paypal">Paypal</label>
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn indexButton pull-right" style="margin:0px">購買</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h4 class="h4-responsive">{{$productData->productName}} <div class="pull-right">${{$productData->price}}</div></h4>
-                <select>
-                    <option value="" disabled>購買選項</option>
-                    <option value="1" selected>直接購買</option>
-                    <option value="2">送禮</option>
-                </select>
-            </div>
-            <button class="btn indexButton pull-right">提交訂單</button>
-        </div>
+            <input type="hidden" name="productID" id="productID" value="{{$productData->productID}}"/>
+            <input type="hidden" name="quantity" id="quantity" value="1"/>
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </form>
         <hr/>
-        <pre>
-            {{$productData->description}}
-        </pre>
+        <h5 class="h5-responsive">商品簡介</h5>
+        <pre>{{$productData->description}}</pre>
     </div>
 </div>
 </body>

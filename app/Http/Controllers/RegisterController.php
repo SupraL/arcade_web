@@ -46,15 +46,10 @@ class RegisterController extends Controller
             if ($errorCode == -1000) {
                 $errorCode = file_get_contents(Config::get('app.bbsUrl') . '/plugin/reg/register.php?username=' . $username . '&password=' . $password . '&email=' . $email);
 
-                /*DB::table('users')->insert(
-                    array('userID' => $userID,
-                        'typeID' => 'typ00002',
-                        'username' => $username,
-                        'password' => $password,
-                        'email' => $email,
-                        'cashPoint' => '0',
-                        'userIcon' => '')
-                );*/
+                DB::table('users')->insert(
+                    array('userID' => $errorCode,
+                        'cashPoint' => '0')
+                );
             }
         } else {
             $errorCode = -999;

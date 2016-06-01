@@ -30,6 +30,21 @@
 </head>
 <body>
 @extends('header')
+<?php
+if(Session::has('errorCode')){
+    $errorCode = Session::get('errorCode');
+    if(isset($errorCode)){
+        switch($errorCode){
+            case "-1":
+                echo "<script>toastr.success('購買成功! 詳情可到帳戶資訊 > 交易記錄中查看!');</script>";
+                break;
+            case "1":
+                echo "<script>toastr.warning('抱歉，您的AP並不足夠，或請進行儲值再進行購買!');</script>";
+                break;
+        }
+    }
+}
+?>
 <br/>
 <br/>
 <br/>
@@ -40,6 +55,7 @@
             <li><a href="./">主頁</a></li>
             <li class="active">商店</li>
         </ol>
+
     </div>
 </div>
 <div class="container">

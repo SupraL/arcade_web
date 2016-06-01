@@ -14,13 +14,18 @@
     <script src="{{ secure_asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
 </head>
 <body>
 @extends('adminView/header')
 <div class="verticalContainer">
     <h4 class="h4-responsive">序號管理</h4>
     <hr/>
-    <button type="button" class="btn btn-primary">新增序號</button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">新增序號</button>
     <table class="table">
         <thead>
         <tr>
@@ -49,6 +54,51 @@
         @endforeach
         </tbody>
     </table>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">新增序號</h4>
+            </div>
+            <form action="./redeemCode" method="POST">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-field" style="margin-top:0px">
+                                <input id="codeHeader" name="codeHeader" type="text" class="validate" value="ACDCS">
+                                <label for="icon_prefix">序號前綴</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select name="productOption" id="productOption">
+                                <option value="" disabled selected>選擇物品</option>
+                                @foreach($productList as $product)
+                                    <option value="{{$product->productID}}">{{$product->productName}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-field" style="margin-top:0px">
+                                <input id="quantity" name="quantity" type="text" class="validate">
+                                <label for="icon_prefix">數量</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancelButton" data-dismiss="modal">關閉</button>
+                    <button type="submit" class="btn indexButton" style="margin:0px">新增</button>
+                </div>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

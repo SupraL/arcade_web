@@ -24,7 +24,7 @@ class RedeemController extends Controller
             $errorCode = 1;
         }
         if($cashCodeCount == 1){
-            $recordID = DB::table('redeemcardrecord')->max('userID');
+            $recordID = DB::table('redeemcardrecord')->max('redeemID');
             if($recordID != ""){
                 $recordID = 'rid' . sprintf("%05d", (intval(substr($recordID, -5)) + 1));
             } else {
@@ -35,12 +35,12 @@ class RedeemController extends Controller
                     'used' => DB::raw('1')
                 )
             );
-            /*DB::table('redeemcardrecord')->insert(
+            DB::table('redeemcardrecord')->insert(
               array('redeemID' => $recordID,
                     'cardID' => $cashCodeData->cardID,
-                    'userID' => Session::get('userID'),
+                    'uid' => Session::get('userID'),
                     'redeemDate' => date('Y-m-d H:i:s'))
-            );*/
+            );
         }
         return Redirect::to('/member'.'#redeem')->with('errorCode',$errorCode)->with('cashCodeData',$cashCodeData)->with('type','redeem');
     }

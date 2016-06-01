@@ -47,7 +47,7 @@
     </div>
 </div>
 <div class="container">
-    <ul class="nav nav-tabs tabs-3" role="tablist" style="margin-top: 15px;">
+    <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
         <li class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#tabPage1" role="tab"><i class="material-icons">account_circle</i> 帳戶資訊</a>
         </li>
@@ -55,7 +55,10 @@
             <a class="nav-link" data-toggle="tab" href="#tabPage2" role="tab"><i class="material-icons">redeem</i> 序號兌換</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabPage3" role="tab"><i class="material-icons">receipt</i> 交易記錄</a>
+            <a class="nav-link" data-toggle="tab" href="#tabPage3" role="tab"><i class="material-icons">receipt</i> 儲值記錄</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tabPage4" role="tab"><i class="material-icons">reorder</i> 交易記錄</a>
         </li>
     </ul>
     <div class="tab-content">
@@ -65,7 +68,7 @@
                 <div class="card-block container">
                     <label style="font-size: 18px;color:#000000">用戶名稱：{{Session::get("username")}}</label><br/>
                     <label style="font-size: 18px;color:#000000">電郵地址：{{Session::get("email")}}</label><br/>
-                    <label style="font-size: 18px;color:#000000">帳號類型：<span class="label label-pill bg-primary">{{Session::get("typeName")}}</span></label><br/>
+                    <label style="font-size: 18px;color:#000000">點數剩餘：{{$userData->cashPoint}}<br/>
                     <a href="#" class="btn btn-primary">更改密碼</a>
                 </div>
             </div>
@@ -97,7 +100,36 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <table class="table table-striped table-hover">
-                                <thead><tr><th>訂單編號</th><th>貨品名稱</th><th>數量</th><th>價錢</th></tr></thead>
+                                <thead><tr><th>儲值編號</th><th>卡號</th><th>貨品名稱</th><th>數量</th></tr></thead>
+                                @foreach($redeemRecordList as $redeemRecord)
+                                    <tr>
+                                        <td>{{$redeemRecord->redeemID}}</td>
+                                        <td>{{$redeemRecord->cardNumber}}</td>
+                                        <td>{{$redeemRecord->productName}}</td>
+                                        <td>{{$redeemRecord->quantity}}</td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade in" id="tabPage4" role="tabpanel">
+            <div class="card">
+                <div class="conatiner">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <table class="table table-striped table-hover">
+                                <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>狀態</th></tr></thead>
+                                @foreach($orderRecordList as $order)
+                                    <tr>
+                                        <td>{{$order->orderID}}</td>
+                                        <td>{{$order->totalPrice}}</td>
+                                        <td>{{$order->orderDateTime}}</td>
+                                        <td>{{$order->statusName}}</td>
+                                    </tr>
+                                @endforeach
                             </table>
                         </div>
                     </div>
@@ -126,6 +158,11 @@
                 $(".nav-item")[2].classList.add("active");
                 $("#tabPage3")[0].classList.add("active");
                 $("#tabPage3")[0].classList.add("in");
+                break;
+            case "#buyRecord":
+                $(".nav-item")[3].classList.add("active");
+                $("#tabPage4")[0].classList.add("active");
+                $("#tabPage4")[0].classList.add("in");
                 break;
             default:
                 $(".nav-item")[0].classList.add("active");
