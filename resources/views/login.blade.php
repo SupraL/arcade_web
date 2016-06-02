@@ -58,7 +58,7 @@ if(isset($errorCode)){
                 <div class="col-md-6 col-md-offset-3">
                     <div class="input-field">
                         <i class="material-icons prefix">vpn_key</i>
-                        <input id="password" name="password" type="text" class="validate" required>
+                        <input id="password" name="password" type="password" class="validate" required>
                         <label for="icon_prefix">密碼</label>
                     </div>
                 </div>

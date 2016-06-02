@@ -13,7 +13,27 @@ class ShopController extends Controller
     public function doShop(){
         $productList = DB::table('products')->join('games','products.gameID','=','games.gameID')->where('available','1')->get();
         $gameList = DB::table('games')->get();
-        return view('shopIndex')->with("productList",$productList)->with("gameList",$gameList);
+        $cartArray = array('productCount'=>0,'totalPrice'=>0);
+        Session::forget('cart_productList');
+        Session::push('cart_productList',array('productID'=>'prd00001','quantity'=>'3'));
+        Session::push('cart_productList',array('productID'=>'prd00002','quantity'=>'2'));
+        if(Session::has('cart_productList')){
+            $totalPrice = 0;
+            $cartCount = count(Session::get('cart_productList'));
+            $cartArray['productCount'] = $cartCount;
+            for($i = 0;$i < $cartCount;$i++){
+                $productData = DB::table('products')->where('productID',Session::get('cart_productList')[$i]['productID'])->first();
+                $totalPrice += $productData->price * Session::get('cart_productList')[$i]['quantity'];
+            }
+            $cartArray['totalPrice'] = $totalPrice;
+        }
+        return view('shopIndex')->with("productList",$productList)->with("gameList",$gameList)->with('cartArray',$cartArray);
+    }
+    public function addToCart(){
+
+    }
+    public function removeFromCart($id){
+
     }
     public function doProductDetails($id){
         try {
@@ -35,8 +55,13 @@ class ShopController extends Controller
         $quantity = Input::get('quantity');
         $uid = Session::get('userID');
         $userData = DB::table('users')->where('userID',$uid)->first();
-        $productDetails = DB::table('products')->where('productID',$productID)->first();
+        $productDetails = DB::table('products')->where('productID',$productID)->where('available','1')->first();
+        if(empty($productDetails)){
+            $errorCode = 2;
+            return Redirect::to('/shop')->with('errorCode',$errorCode);
+        }
         $totalPrice = $productDetails->price * $quantity;
+        $paymentMethodID = Input::get('paymentMethodOptions');
 
         $orderID = DB::table('orders')->max('orderID');
 
@@ -45,7 +70,8 @@ class ShopController extends Controller
         } else {
             $orderID = 'ord00001';
         }
-
+        
+        
         if($productDetails->price > $userData->cashPoint){
             $errorCode = 1;
             //not enough money
@@ -55,7 +81,8 @@ class ShopController extends Controller
                     'uid' => $uid,
                     'totalPrice' => $totalPrice,
                     'orderDateTime' => date('Y-m-d H:i:s'),
-                    'statusID' => 'sts00001')
+                    'statusID' => 'sts00001',
+                    'methodID' => $paymentMethodID)
             );
             DB::table('orderproduct')->insert(
                 array('orderID' => $orderID,

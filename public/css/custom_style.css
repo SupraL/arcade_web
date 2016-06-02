@@ -13,6 +13,14 @@ body {
     color: #FFFFFF;
     background-color: #9e9e9e;
 }
+.shoppingCartButton{
+    color: #FFFFFF;
+    background-color: #33b5e5;
+}
+.shoppingCartButton:hover{
+    color:#FFFFFF;
+    background-color: #0099CC;
+}
 .cancelButton:hover{
     color:#FFFFFF;
     background-color: #757575;

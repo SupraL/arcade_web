@@ -46,6 +46,7 @@ Route::get('/image/{id}','ImageController@getImg');
 Route::post('/redeemCode','RedeemController@doRedeem');
 Route::get('/buyCash','BuyCashController@');
 Route::post('/placeOrder','ShopController@doPlaceOrder');
+Route::post('/addToCart','ShopController@addToCart');
 
 Route::get('/testController','TestController@showTest');
 

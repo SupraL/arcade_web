@@ -25,7 +25,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Session::get('username')}} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li class="divider hidden-lg"></li>
-                                <li><a href="{{ URL::asset('/member#info') }}">帳號資訊</a></li>
+                                <li><a href="{{ URL::asset('/member') }}">帳號資訊</a></li>
                                 <li><a href="{{ URL::asset('/member#record') }}">交易記錄</a></li>
                                 <li><a href="{{ URL::asset('/buyCash') }}">儲值點數</a></li>
                             </ul>

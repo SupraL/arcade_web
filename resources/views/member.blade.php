@@ -100,13 +100,14 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <table class="table table-striped table-hover">
-                                <thead><tr><th>儲值編號</th><th>卡號</th><th>貨品名稱</th><th>數量</th></tr></thead>
+                                <thead><tr><th>儲值編號</th><th>卡號</th><th>貨品名稱</th><th>數量</th><th>儲值時間</th></tr></thead>
                                 @foreach($redeemRecordList as $redeemRecord)
                                     <tr>
                                         <td>{{$redeemRecord->redeemID}}</td>
                                         <td>{{$redeemRecord->cardNumber}}</td>
                                         <td>{{$redeemRecord->productName}}</td>
                                         <td>{{$redeemRecord->quantity}}</td>
+                                        <td>{{$redeemRecord->redeemDate}}</td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -121,12 +122,14 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <table class="table table-striped table-hover">
-                                <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>狀態</th></tr></thead>
+                                <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>付款方法</th><th>狀態</th></tr></thead>
                                 @foreach($orderRecordList as $order)
                                     <tr>
                                         <td>{{$order->orderID}}</td>
+
                                         <td>{{$order->totalPrice}}</td>
                                         <td>{{$order->orderDateTime}}</td>
+                                        <td>{{$order->methodName}}</td>
                                         <td>{{$order->statusName}}</td>
                                     </tr>
                                 @endforeach

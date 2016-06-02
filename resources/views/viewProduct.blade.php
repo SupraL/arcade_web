@@ -55,11 +55,11 @@
                     <div class="col-md-6">
                         <h5 class="h5-responsive">付款方法</h5>
                         <div class="col-md-4">
-                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_bank" checked>
+                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_bank" value="mth00001" checked>
                             <label for="radio_bank">銀行轉帳</label>
                         </div>
                         <div class="col-md-4">
-                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_paypal">
+                            <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_paypal" value="mth00002">
                             <label for="radio_paypal">Paypal</label>
                         </div>
                         <div class="col-md-4">
@@ -68,8 +68,8 @@
                     </div>
                 </div>
             </div>
-            <input type="hidden" name="productID" id="productID" value="{{$productData->productID}}"/>
-            <input type="hidden" name="quantity" id="quantity" value="1"/>
+            <input type="hidden" name="productID" id="productID" value="{{$productData->productID}}" readonly/>
+            <input type="hidden" name="quantity" id="quantity" value="1" readonly/>
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </form>
         <hr/>

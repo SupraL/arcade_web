@@ -31,6 +31,7 @@
 <body>
 @extends('header')
 <?php
+
 if(Session::has('errorCode')){
     $errorCode = Session::get('errorCode');
     if(isset($errorCode)){
@@ -40,6 +41,9 @@ if(Session::has('errorCode')){
                 break;
             case "1":
                 echo "<script>toastr.warning('抱歉，您的AP並不足夠，或請進行儲值再進行購買!');</script>";
+                break;
+            case "2":
+                echo "<script>toastr.warning('抱歉，此物品似乎並不存在;)');</script>";
                 break;
         }
     }
@@ -67,6 +71,13 @@ if(Session::has('errorCode')){
                     <a href="#" class="list-group-item" id="{{$game->gameID}}">{{$game->gameName}}</a>
                 @endforeach
             </div>
+            <div class="jumbotron" style="padding:10px">
+                <h5 class="h5-responsive">購物車概況</h5>
+                <hr style="margin-top:5px"/>
+                您的購物車內有 {{$cartArray["productCount"]}} 件物品<br/>
+                總值：$ {{$cartArray["totalPrice"]}}
+                <Button class="btn btn-block shoppingCartButton" style="width:100%">查看購物車</Button>
+            </div>
         </div>
         <div class="col-md-9">
             <div class="row">
@@ -76,18 +87,22 @@ if(Session::has('errorCode')){
                             <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
                                 <!--Discount label-->
                                 <h5 class="card-label"> <span class="label {{$product->gameColor}}">{{$product->gameName}}</span></h5>
-                                <a href=""><img class="img-fluid" src="./image/{{$product->productID}}" style="width:100%;height:140px">
+                                <a href="#"><img class="img-fluid" src="./image/{{$product->productID}}" style="width:100%;height:140px">
                                     <div class="mask"> </div>
                                 </a>
                             </div>
-                            <div class="action-buttons">
-                                <a class="btn-floating btn-small blue"><i class="fa fa-cart-plus"></i></a>
-                            </div>
+                            <form action="./addToCart" method="POST">
+                                <div class="action-buttons">
+                                    <a class="btn-floating btn-small blue" onclick="this.parentNode.parentNode.submit()" href="#"><i class="fa fa-cart-plus"></i></a>
+                                </div>
+                                <input type="hidden" name="productID" value="{{$product->productID}}"/>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            </form>
                             <div class="card-title">
                                 <h5 class="card-title" style="color:#000000;margin-left:10px">{{$product->productName}} <div class="pull-right" style="margin-right:5px;"><i class="material-icons">attach_money</i>{{$product->price}}</div></h5>
                                 <pre style="height:72px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px">{{$product->description}}</pre>
                                 <hr style="margin-bottom:5px"/>
-                                <center><a class="btn stylish-color-dark" href="./viewProduct/{{$product->productID}}" style="color:#FFFFFF">詳細資料</a><button class="btn indexButton">立即購買</button></center>
+                                <center><a class="btn stylish-color-dark btn-block" href="./viewProduct/{{$product->productID}}" style="color:#FFFFFF;margin:0px">詳細資料</a></center>
                             </div>
                         </div>
                     </div>
