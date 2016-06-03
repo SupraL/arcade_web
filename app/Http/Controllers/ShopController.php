@@ -29,6 +29,35 @@ class ShopController extends Controller
         }
         return view('shopIndex')->with("productList",$productList)->with("gameList",$gameList)->with('cartArray',$cartArray);
     }
+    public function doUpdateCartQuantity(){
+        $errorCode = 0;
+        $updateType = Input::get('updateType');
+        $productID = Input::get('productID');
+        $cartProductList = Session::get('cart_productList');
+        if($updateType == "minus"){
+            for($i = 0; $i < count($cartProductList);$i++){
+                if($cartProductList[$i]['productID'] == $productID){
+                    if($cartProductList[$i]['quantity'] > 1) {
+                        $cartProductList[$i]['quantity'] = $cartProductList[$i]['quantity'] - 1;
+                        Session::put('cart_productList', $cartProductList);
+                        $errorCode = -1;
+                    } else {
+                        $errorCode = -2;
+                    }
+                }
+            }
+        }
+        if($updateType == "plus"){
+            for($i = 0; $i < count($cartProductList);$i++){
+                if($cartProductList[$i]['productID'] == $productID){
+                    $cartProductList[$i]['quantity'] = $cartProductList[$i]['quantity'] + 1;
+                    Session::put('cart_productList',$cartProductList);
+                    $errorCode = -1;
+                }
+            }
+        }
+        return Redirect::to('/shoppingCart')->with('errorCode',$errorCode)->with('type','updateCart');
+    }
     public function getShoppingCartPage(){
         $cartProductList = Session::get('cart_productList');
         $productArray = array();
@@ -44,6 +73,7 @@ class ShopController extends Controller
     }
     public function addToCart(){
         $errorCode = -2;
+        $isExists = false;
         $productID = Input::get('productID');
         $quantity = 1;
         $productData = DB::table('products')->where('productID',$productID)->first();
@@ -51,7 +81,17 @@ class ShopController extends Controller
             $errorCode = 2;
             return Redirect::to('/shop')->with('errorCode',$errorCode);
         } else {
-            Session::push('cart_productList',array('productID'=> $productID,'quantity'=> $quantity));
+            $cartProductList = Session::get('cart_productList');
+            for($i = 0; $i < count($cartProductList);$i++){
+                if($cartProductList[$i]['productID'] == $productID){
+                    $cartProductList[$i]['quantity'] = $cartProductList[$i]['quantity'] + 1;
+                    Session::put('cart_productList',$cartProductList);
+                    $isExists = true;
+                }
+            }
+            if(!$isExists) {
+                Session::push('cart_productList', array('productID' => $productID, 'quantity' => $quantity));
+            }
         }
         return Redirect::to('/shop')->with('errorCode',$errorCode);
     }
@@ -82,6 +122,9 @@ class ShopController extends Controller
 
         $productData = DB::table('products')->join('games','products.gameID','=','games.gameID')->where('products.productID',$id)->first();
         return view('viewProduct')->with('productData',$productData);
+    }
+    public function doCartCheckout(){
+        
     }
     public function doPlaceOrder(){
         $errorCode = -1;

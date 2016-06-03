@@ -28,6 +28,14 @@ body {
 .btn:hover{
     color:#FFFFFF;
 }
+.cartAddButton{
+    background-color: #00695C;
+    color:#FFFFFF;
+}
+.cartAddButton:hover{
+    background-color: #009688;
+    color:#FFFFFF;
+}
 
 .col-centered{
     float: none;

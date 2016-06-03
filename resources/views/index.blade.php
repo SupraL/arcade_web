@@ -96,9 +96,8 @@
                             <img height="60px" width="60px" src="{{ URL::asset('img/logo.jpg') }}"/>
                         </div>
                         <div class="col-md-9">
-                            <a href="#" style="font-size:20px">ArcadeCrafts</a><br/>
-                            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                        </div>
+                            <a href="https://www.facebook.com/Arcade-Crafts-Studio-1746892298886678/" style="font-size:20px">ArcadeCrafts</a><br/>
+                            <div class="fb-like" data-href="https://www.facebook.com/Arcade-Crafts-Studio-1746892298886678/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>                        </div>
                     </div>
                 </div>
                 <button type="button" class="btn indexButton btn-lg btn-block">遊戲下載</button>

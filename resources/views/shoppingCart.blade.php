@@ -20,7 +20,6 @@
 <?php
     if(Session::has('errorCode')){
         $type = Session::get('type');
-        echo $type;
         if($type == 'del'){
             $errorCode = Session::get('errorCode');
             switch($errorCode){
@@ -29,6 +28,20 @@
                     break;
                 case "1":
                     echo "<script>toastr.warning('您的購物車不存在此物品!');</script>";
+                    break;
+            }
+        }
+        if($type == 'updateCart'){
+            $errorCode = Session::get('errorCode');
+            switch($errorCode){
+                case "-2":
+                    echo "<script>toastr.warning('您可不能對數量使壞哦>.^!');</script>";
+                    break;
+                case "-1":
+                    echo "<script>toastr.success('成功更新購物車!');</script>";
+                    break;
+                case "0":
+                    echo "<script>toastr.warning('物品並不存在於您的購物車中;)');</script>";
                     break;
             }
         }
@@ -63,13 +76,31 @@
                                 <td>{{$product->price}}</td>
                                 <td style="width:20%">
                                     <div class="md-form input-group">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-danger btn-sm danger-color" type="button">&nbsp-&nbsp</button>
-                                        </span>
-                                        <input type="text" class="form-control text-center" value="{{$cart_productList[$index]['quantity']}}">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-default btn-sm default-color-dark" type="button">&nbsp+&nbsp</button>
-                                        </span>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <form action="./updateCart" method="post">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-danger btn-sm danger-color" type="submit" {{($cart_productList[$index]['quantity'] == 1)?"disabled":""}}>&nbsp-&nbsp</button>
+                                                    </span>
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="updateType" value="minus"/>
+                                                    <input type="hidden" name="productID" value="{{$cart_productList[$index]['productID']}}">
+                                                </form>
+                                            </div>
+                                            <div class="col-md-6" style="padding-right: 0px">
+                                                <input type="text" class="form-control text-center" name="productQuantity" value="{{$cart_productList[$index]['quantity']}}" readonly>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <form action="./updateCart" method="post">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-default btn-sm cartAddButton" type="submit">&nbsp+&nbsp</button>
+                                                    </span>
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="updateType" value="plus"/>
+                                                    <input type="hidden" name="productID" value="{{$cart_productList[$index]['productID']}}">
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
@@ -86,7 +117,7 @@
                         <center><h4 class="h4-responsive" style="color:#bdbdbd">您的購物車還沒有任何物品!</h4></center>
                      @endif
                     <hr/>
-                    <h5 class="h5-responsive">總金額 : ${{$totalPrice}}<button class="btn indexButton pull-right" style="margin-top:0px">結帳</button></h5>
+                    <h5 class="h5-responsive">總金額 : ${{$totalPrice}}<a href="./doCartCheckout" class="btn indexButton pull-right" style="margin-top:0px">結帳</a></h5>
                 </div>
             </div>
         </div>

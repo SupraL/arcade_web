@@ -3,6 +3,11 @@
     $context = stream_context_create($opts);
     $userData = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/checkLogin.php', false, $context));*/
 ?>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
 <nav class="navbar unique-color-dark navbar-fixed-top z-depth-1" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -48,3 +53,8 @@
         </div>
     </div>
 </nav>
+<div style="position:fixed;right:50px;bottom:50px;">
+    <a href="http://m.me/1746892298886678" target="_blank" type="button" class="btn-floating btn-large btn-fb" style="background-color: #3b5999" data-toggle="tooltip" data-placement="top" title="線上客服">
+        <img style="width:100%;height:100%" src="{{ secure_asset('img/fbMessage.png') }}"/>
+    </a>
+</div>

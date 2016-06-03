@@ -49,6 +49,8 @@ Route::post('/placeOrder','ShopController@doPlaceOrder');
 Route::post('/addToCart','ShopController@addToCart');
 Route::get('/shoppingCart','ShopController@getShoppingCartPage');
 Route::post('/delCartProduct','ShopController@removeFromCart');
+Route::post('/updateCart','ShopController@doUpdateCartQuantity');
+Route::get('/doCartCheckout','ShopController@doCartCheckout');
 
 Route::get('/testController','TestController@showTest');
 
