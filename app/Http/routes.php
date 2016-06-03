@@ -47,6 +47,8 @@ Route::post('/redeemCode','RedeemController@doRedeem');
 Route::get('/buyCash','BuyCashController@');
 Route::post('/placeOrder','ShopController@doPlaceOrder');
 Route::post('/addToCart','ShopController@addToCart');
+Route::get('/shoppingCart','ShopController@getShoppingCartPage');
+Route::post('/delCartProduct','ShopController@removeFromCart');
 
 Route::get('/testController','TestController@showTest');
 

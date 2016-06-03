@@ -36,6 +36,9 @@ if(Session::has('errorCode')){
     $errorCode = Session::get('errorCode');
     if(isset($errorCode)){
         switch($errorCode){
+            case "-2":
+                echo "<script>toastr.success('物品已成功新增至購物車!');</script>";
+                break;
             case "-1":
                 echo "<script>toastr.success('購買成功! 詳情可到帳戶資訊 > 交易記錄中查看!');</script>";
                 break;
@@ -59,7 +62,6 @@ if(Session::has('errorCode')){
             <li><a href="./">主頁</a></li>
             <li class="active">商店</li>
         </ol>
-
     </div>
 </div>
 <div class="container">
@@ -76,7 +78,7 @@ if(Session::has('errorCode')){
                 <hr style="margin-top:5px"/>
                 您的購物車內有 {{$cartArray["productCount"]}} 件物品<br/>
                 總值：$ {{$cartArray["totalPrice"]}}
-                <Button class="btn btn-block shoppingCartButton" style="width:100%">查看購物車</Button>
+                <a href="./shoppingCart" class="btn btn-block shoppingCartButton" style="width:100%">查看購物車</a>
             </div>
         </div>
         <div class="col-md-9">

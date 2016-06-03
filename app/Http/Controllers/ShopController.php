@@ -14,9 +14,9 @@ class ShopController extends Controller
         $productList = DB::table('products')->join('games','products.gameID','=','games.gameID')->where('available','1')->get();
         $gameList = DB::table('games')->get();
         $cartArray = array('productCount'=>0,'totalPrice'=>0);
-        Session::forget('cart_productList');
-        Session::push('cart_productList',array('productID'=>'prd00001','quantity'=>'3'));
-        Session::push('cart_productList',array('productID'=>'prd00002','quantity'=>'2'));
+        //Session::forget('cart_productList');
+        //Session::push('cart_productList',array('productID'=>'prd00001','quantity'=>'3'));
+        //Session::push('cart_productList',array('productID'=>'prd00002','quantity'=>'2'));
         if(Session::has('cart_productList')){
             $totalPrice = 0;
             $cartCount = count(Session::get('cart_productList'));
@@ -29,11 +29,45 @@ class ShopController extends Controller
         }
         return view('shopIndex')->with("productList",$productList)->with("gameList",$gameList)->with('cartArray',$cartArray);
     }
-    public function addToCart(){
-
+    public function getShoppingCartPage(){
+        $cartProductList = Session::get('cart_productList');
+        $productArray = array();
+        $totalPrice = 0;
+        for($i = 0; $i < count($cartProductList);$i++){
+            $productData = DB::table('products')->where('productID',$cartProductList[$i]['productID'])->first();
+            if(!empty($productData)) {
+                array_push($productArray, $productData);
+                $totalPrice += $productData->price;
+            }
+        }
+        return view('shoppingCart')->with('productArray',$productArray)->with('cart_productList',$cartProductList)->with('totalPrice',$totalPrice);
     }
-    public function removeFromCart($id){
+    public function addToCart(){
+        $errorCode = -2;
+        $productID = Input::get('productID');
+        $quantity = 1;
+        $productData = DB::table('products')->where('productID',$productID)->first();
+        if(empty($productData)){
+            $errorCode = 2;
+            return Redirect::to('/shop')->with('errorCode',$errorCode);
+        } else {
+            Session::push('cart_productList',array('productID'=> $productID,'quantity'=> $quantity));
+        }
+        return Redirect::to('/shop')->with('errorCode',$errorCode);
+    }
+    public function removeFromCart(){
+        $errorCode = 1;
+        $productID = Input::get('productID');
+        $cartArray = Session::get('cart_productList');
+        for($i = 0; $i < count($cartArray);$i++){
+            if($cartArray[$i]['productID'] == $productID){
+                $errorCode = -1;
+                array_splice($cartArray, $i, 1);
+                Session::put('cart_productList',$cartArray);
+            }
+        }
 
+        return Redirect::to('/shoppingCart')->with('errorCode',$errorCode)->with('type','del');
     }
     public function doProductDetails($id){
         try {
