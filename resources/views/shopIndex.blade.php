@@ -36,6 +36,9 @@ if(Session::has('errorCode')){
     $errorCode = Session::get('errorCode');
     if(isset($errorCode)){
         switch($errorCode){
+            case "-9999":
+                echo "<script>toastr.success('您的訂單已成功提交!詳細可以到 帳號資訊>交易記錄中查看!');</script>";
+                break;
             case "-2":
                 echo "<script>toastr.success('物品已成功新增至購物車!');</script>";
                 break;

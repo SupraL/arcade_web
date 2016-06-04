@@ -117,7 +117,29 @@
                         <center><h4 class="h4-responsive" style="color:#bdbdbd">您的購物車還沒有任何物品!</h4></center>
                      @endif
                     <hr/>
-                    <h5 class="h5-responsive">總金額 : ${{$totalPrice}}<a href="./doCartCheckout" class="btn indexButton pull-right" style="margin-top:0px">結帳</a></h5>
+                    <form action="./doCartCheckout" method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5 class="h5-responsive">
+                            <div class="col-md-2">
+                                付款方法：
+                            </div>
+
+                            <div class="col-md-2">
+                                <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_bank" value="mth00001" checked>
+                                <label for="radio_bank">銀行轉帳</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input name="paymentMethodOptions" type="radio" class="with-gap" id="radio_paypal" value="mth00002">
+                                <label for="radio_paypal">Paypal</label>
+                            </div>
+                            </h5>
+                        </div>
+                    </div>
+                    <hr/>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <h5 class="h5-responsive">總金額 : ${{$totalPrice}}<button type="submit" class="btn indexButton pull-right" style="margin-top:0px">結帳</button></h5>
+                    </form>
                 </div>
             </div>
         </div>

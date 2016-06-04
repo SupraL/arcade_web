@@ -50,7 +50,8 @@ Route::post('/addToCart','ShopController@addToCart');
 Route::get('/shoppingCart','ShopController@getShoppingCartPage');
 Route::post('/delCartProduct','ShopController@removeFromCart');
 Route::post('/updateCart','ShopController@doUpdateCartQuantity');
-Route::get('/doCartCheckout','ShopController@doCartCheckout');
+Route::post('/doCartCheckout','ShopController@doCartCheckout');
+Route::get('/viewOrderDetails/{id}','MemberController@getOrderDetails');
 
 Route::get('/testController','TestController@showTest');
 

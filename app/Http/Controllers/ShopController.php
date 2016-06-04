@@ -124,7 +124,55 @@ class ShopController extends Controller
         return view('viewProduct')->with('productData',$productData);
     }
     public function doCartCheckout(){
-        
+        $uid = Session::get('userID');
+        $userData = DB::table('users')->where('userID',$uid)->first();
+        $cartList = Session::get('cart_productList');
+        $totalPrice = 0;
+        $errorCode = -9999;
+        $orderID = DB::table('orders')->max('orderID');
+        $paymentMethodID = Input::get('paymentMethodOptions');
+        if(!empty($orderID)){
+            $orderID = 'ord' . sprintf("%05d", (intval(substr($orderID, -5)) + 1));
+        } else {
+            $orderID = 'ord00001';
+        }
+        for($i = 0; $i < count($cartList);$i++){
+            $productData = DB::table('products')->where('productID',Session::get('cart_productList')[$i]['productID'])->first();
+            if(!empty($productData)) {
+                $totalPrice += $productData->price * Session::get('cart_productList')[$i]['quantity'];
+            } else {
+                $errorCode = 1;
+            }
+        }
+        if($totalPrice > $userData->cashPoint){
+            $errorCode = 1;
+        }
+        if($errorCode == -9999) {
+            DB::table('orders')->insert(
+                array('orderID' => $orderID,
+                    'uid' => $uid,
+                    'totalPrice' => $totalPrice,
+                    'orderDateTime' => date('Y-m-d H:i:s'),
+                    'statusID' => 'sts00001',
+                    'methodID' => $paymentMethodID)
+            );
+            for($i = 0; $i < count($cartList);$i++){
+                $quantity = $cartList[$i]['quantity'];
+                $productID = $cartList[$i]['productID'];
+                DB::table('orderproduct')->insert(
+                    array('orderID' => $orderID,
+                        'productID' => $productID,
+                        'quantity' => $quantity)
+                );
+            }
+            DB::table('users')->where('userID',$uid)->update(
+                array(
+                    'cashPoint' => DB::raw($userData->cashPoint - $totalPrice)
+                )
+            );
+            Session::forget('cart_productList');
+        }
+        return Redirect::to('/shop')->with('errorCode',$errorCode);
     }
     public function doPlaceOrder(){
         $errorCode = -1;

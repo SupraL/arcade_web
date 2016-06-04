@@ -125,8 +125,7 @@
                                 <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>付款方法</th><th>狀態</th></tr></thead>
                                 @foreach($orderRecordList as $order)
                                     <tr>
-                                        <td>{{$order->orderID}}</td>
-
+                                        <td><a href="#" class="orderDetailsLink" data-toggle="modal" data-target="#orderDetailsModal">{{$order->orderID}}</a></td>
                                         <td>{{$order->totalPrice}}</td>
                                         <td>{{$order->orderDateTime}}</td>
                                         <td>{{$order->methodName}}</td>
@@ -141,7 +140,39 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="modalTitle">Modal title</h4>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <iframe id="orderDetailsFrame" src="" frameBorder="0" scrolling="yes" style="width:100%;height:100%"></iframe>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
 <script>
+    $(document).ready(function(){
+        $(".orderDetailsLink").click(function(){
+            $("#modalTitle").text($(this).text());
+            $("#orderDetailsFrame").attr('src',"./viewOrderDetails/" + $(this).text());
+            $("#orderDetailsFrame").css('overflow-x','hidden');
+        });
+    });
+
+
     var hash = window.location.hash;
     if(hash != "") {
         $(".nav-item")[0].classList.remove("active");
