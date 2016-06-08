@@ -89,6 +89,10 @@
                 echo "<script>toastr.success('帳號註冊成功!<br/>5秒後會自動跳轉至登入頁面');</script>";
                 echo '<meta http-equiv="refresh" content="5; url=./" />';
             }
+        } else {
+            if(Session::has('userID')){
+                echo '<meta http-equiv="refresh" content="0; url=./" />';
+            }
         }
     ?>
     <div class="card">

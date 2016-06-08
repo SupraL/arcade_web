@@ -26,13 +26,17 @@ class MemberController extends Controller
 
 
     public function getOrderDetails($id){
-        $errorCode = 0;
-        $orderDetails = DB::table('orderproduct')->join('orders','orderproduct.orderID','=','orders.orderID')->join('products','products.productID','=','orderproduct.productID')->where('orderproduct.orderID',$id)->get();
-        if(!empty($orderDetails)){
-            $errorCode = -1;
-            return view('viewOrderProduct')->with('errorCode',$errorCode)->with('orderDetails',$orderDetails);
-        } else {
-            return view('viewOrderProduct')->with('errorCode',$errorCode);
+        if(Session::has('userID')) {
+            $errorCode = 0;
+            $orderDetails = DB::table('orderproduct')->join('orders', 'orderproduct.orderID', '=', 'orders.orderID')->join('products', 'products.productID', '=', 'orderproduct.productID')->where('orderproduct.orderID', $id)->get();
+            if (!empty($orderDetails)) {
+                $errorCode = -1;
+                return view('viewOrderProduct')->with('errorCode', $errorCode)->with('orderDetails', $orderDetails);
+            } else {
+                return view('viewOrderProduct')->with('errorCode', $errorCode);
+            }
+        }else{
+            return view('login');
         }
     }
 }

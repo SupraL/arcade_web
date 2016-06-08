@@ -25,6 +25,10 @@ if(isset($errorCode)){
     if($errorCode > 0){
         echo '<meta http-equiv="refresh" content="0; url=./login/success" />';
     }
+} else {
+    if(Session::has('userID')){
+        echo '<meta http-equiv="refresh" content="0; url=./" />';
+    }
 }
 ?>
 <br/>
