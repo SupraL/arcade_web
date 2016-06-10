@@ -51,50 +51,54 @@
                     <h3 class="h3-responsive">關於我們</h3>
                     <hr />
                     <pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
-<h4 class="h4-responsive">介紹</h4>
+                        <h4 class="h4-responsive">介紹</h4>
 Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中，由幾位具備數年不同的電腦及網頁程式編寫經驗的年輕人組成。
-<h4 class="h4-responsive">理念</h4>
+                        <h4 class="h4-responsive">理念</h4>
 本工作室成員均熱愛電子遊戲，希望透過成立工作室，把舊時曾經熱門的遊戲重新展現於廣大玩家眼前，延續該遊戲的歷程。
 此外，亦希望籍著這次的機會重新聚集一班有熱情、有興趣的玩家，一同分享遊戲。
 我們由2015年中開始籌劃、收集資源、編寫網頁及客戶端、測試及改良舊有遊戲玩法，直到現在我們用了差不多一年的時間完成數個遊戲的私服製作。
 伺服器全數由成員自資，並沒有任何的收益，全部只有各成員的興趣及熱情。
-<h4 class="h4-responsive">成員</h4>
-排名不分先後：
-                            <div class="col-md-12">
-    <!--First review-->
-    <div class="media">
-        <a class="media-left waves-light">
-            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">John Doe</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
-        </div>
-    </div>
-
-                                <!--Second review-->
-    <div class="media">
-        <a class="media-left waves-light">
-            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-2.jpg" alt="Generic placeholder image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Nathan Casie</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
-        </div>
-    </div>
-
-                                <!--Second review-->
-    <div class="media">
-        <a class="media-left waves-light">
-            <img class="img-circle" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Dave Snow</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
-        </div>
-    </div>
-                                </div>
                         </pre>
+
+
+                    <h4 class="h4-responsive">成員</h4>
+                    <hr/>
+                    <div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">John Doe</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-2.jpg" alt="Generic placeholder image">
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Nathan Casie</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;">            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Dave Snow</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;">            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

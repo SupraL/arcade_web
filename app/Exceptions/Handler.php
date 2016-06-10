@@ -52,6 +52,10 @@ class Handler extends ExceptionHandler
         {
             //abort(503);
         }
+
+        if($e instanceof  \NotFoundHttpException){
+            abort(404);
+        }
         return parent::render($request, $e);
     }
 }
