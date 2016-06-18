@@ -32,7 +32,8 @@
                         <div class="animated fadeInDown">
                             <h3 class="h3-responsive">劍靈</h3>
                             <p>開啟3D線上遊戲大門 畫下里程碑的不朽經典巨作<br/>劍與魔法交織的奇幻世界 英雄與戰亂的浪漫冒險</p>
-                            <a class="btn-floating btn-large red" href="./download"><i class="fa fa-download"></i></a>
+                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
+                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
                             <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                     </div>
@@ -45,7 +46,8 @@
                         <div class="animated fadeInDown">
                             <h3 class="h3-responsive">AION</h3>
                             <p>扮演天族或魔族，為了生存與理想，努力成為種族的英雄<br/>展開華麗的翅膀飛翔及戰鬥、體驗超乎想像的奇幻世界</p>
-                            <a class="btn-floating btn-large red" href="./download"><i class="fa fa-download"></i></a>
+                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
+                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
                             <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                     </div>
@@ -58,7 +60,8 @@
                         <div class="animated fadeInDown">
                             <h3 class="h3-responsive">新天堂II</h3>
                             <p>開啟3D線上遊戲大門 畫下里程碑的不朽經典巨作<br/>劍與魔法交織的奇幻世界 英雄與戰亂的浪漫冒險</p>
-                            <a class="btn-floating btn-large red" href="./download"><i class="fa fa-download"></i></a>
+                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
+                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
                             <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                     </div>
@@ -71,7 +74,8 @@
                         <div class="animated fadeInDown">
                             <h3 class="h3-responsive">MXM</h3>
                             <p>集結NC全明星的華麗對戰 熟悉的角色和全新英雄連袂出擊<br/>千變萬化的全新玩法 顛覆傳統MOBA與動作遊戲的刻板印象</p>
-                            <a class="btn-floating btn-large red" href="./download"><i class="fa fa-download"></i></a>
+                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
+                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
                             <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
                         </div>
                     </div>

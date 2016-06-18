@@ -13,7 +13,7 @@ class ShopController extends Controller
     public function doShop(){
         if(Session::has('userID')) {
             $productList = DB::table('products')->join('games', 'products.gameID', '=', 'games.gameID')->where('available', '1')->get();
-            $gameList = DB::table('games')->get();
+            $gameList = DB::table('games')->where('currentVersion','!=','null')->get();
             $cartArray = array('productCount' => 0, 'totalPrice' => 0);
             //Session::forget('cart_productList');
             //Session::push('cart_productList',array('productID'=>'prd00001','quantity'=>'3'));

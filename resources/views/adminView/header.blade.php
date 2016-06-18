@@ -14,7 +14,7 @@
         <li><a class="collapsible-header waves-effect">綜合記錄</a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a href="#" class="waves-effect">訂單記錄</a>
+                    <li><a href="./order" class="waves-effect">訂單記錄</a>
                     </li>
                     <li><a href="#" class="waves-effect">儲值記錄</a>
                     </li>

@@ -64,6 +64,7 @@ Route::get('/admin/index','Admin\IndexController@doIndex');
 Route::get('/admin/redeemCode','Admin\RedeemController@showRedeemPage');
 Route::post('/admin/redeemCode','Admin\RedeemController@doRedeem');
 Route::get('/admin/game','Admin\GameController@showGamePage');
+Route::get('/admin/order','Admin\OrderController@showOrderPage');
 
 //----api----//
 Route::get('/api/games','Admin\GameController@getGamesByApi');
