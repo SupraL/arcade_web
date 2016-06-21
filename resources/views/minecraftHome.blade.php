@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
 </head>
-<body>
+<body background="{{ secure_asset('img/minecraftBg.png')}}" style="background-repeat: no-repeat;background-size: 100% 600px">
 @extends('header')
 <br/>
 <br/>
@@ -24,10 +24,18 @@
 <div style="height:40px;width:100%;background:#F5F5F5">
     <div class="container">
         <ol class="breadcrumb" style="padding: 10px">
-            <li><a href="./">主頁</a></li>
-            <li><a href="./games">遊戲</a></li>
+            <li><a href="../">主頁</a></li>
+            <li><a href="./">遊戲</a></li>
             <li class="active">Minecraft</li>
         </ol>
+    </div>
+</div>
+<div class="container">
+    <div class="card" style="margin-top:50px;background-color:rgba(255,255,255,0.8);">
+        <div class="container">
+            <h4 class="h4-responsive">遊戲簡介</h4>
+            <hr/>
+        </div>
     </div>
 </div>
 </body>
