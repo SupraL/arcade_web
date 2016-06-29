@@ -32,6 +32,19 @@
                         break;
                 }
             }
+            if($type == "openGame"){
+                switch($errorCode){
+                    case "1":
+                        echo "<script>toastr.warning('Mojang帳號或密碼錯誤！');</script>";
+                        break;
+                    case "2":
+                        echo "<script>toastr.warning('此帳號已經綁定過了>.^');</script>";
+                        break;
+                    case "-1":
+                        echo "<script>toastr.success('Minecraft帳號綁定成功！');</script>";
+                        break;
+                }
+            }
         }
 ?>
 <br/>
@@ -64,13 +77,32 @@
     <div class="tab-content">
         <div class="tab-pane fade in active" id="tabPage1" role="tabpanel">
             <div class="card">
-                <h4 class="panel-heading">帳戶資料</h4>
-                <div class="card-block container">
-                    <label style="font-size: 18px;color:#000000">用戶名稱：{{Session::get("username")}}</label><br/>
-                    <label style="font-size: 18px;color:#000000">電郵地址：{{Session::get("email")}}</label><br/>
-                    <label style="font-size: 18px;color:#000000">點數剩餘：{{$userData->cashPoint}}<br/>
-                    <a href="#" class="btn btn-primary">更改密碼</a>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="panel-heading">帳戶資料</h4>
+                        <div class="card-block container">
+                            <label style="font-size: 18px;color:#000000">用戶名稱：{{Session::get("username")}}</label><br/>
+                            <label style="font-size: 18px;color:#000000">電郵地址：{{Session::get("email")}}</label><br/>
+                            <label style="font-size: 18px;color:#000000">點數剩餘：{{$userData->cashPoint}}</label><br/>
+                            <a href="#" class="btn btn-primary">更改密碼</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="panel-heading">開通遊戲</h4>
+                        <div class="col-md-4" style="margin-top:10px">
+                            @if(empty($userData->mcID))
+                                <a href="#" data-toggle="modal" data-target="#MinecraftAuthModal"><img class="greyImage" src="./image/gam00005" style="width:100px;height:100px"/></a>
+                            @else
+                                @if(isset($userData->UUID))
+                                    <div class="skinItem"><a href="#" data-toggle="tooltip" data-container="body" title="{{$userData->nickName}}<br/><img src='./mcSkinViewer/{{$userData->nickName}}'/>" data-html="true" data-placement="left"><img src="./image/gam00005" style="width:100px;height:100px"/></a></div>
+                                @else
+                                    <div class="skinItem"><a href="#" data-toggle="tooltip" data-container="body" title="{{$userData->nickName}}<br/><img src='./mcSkinViewer/ArcadeCraftsDefault'/>" data-html="true" data-placement="left"><img src="./image/gam00005" style="width:100px;height:100px"/></a></div>
+                                @endif
+                            @endif
+                        </div>
+                    </div>
                 </div>
+                <br/>
             </div>
         </div>
         <div class="tab-pane fade in" id="tabPage2" role="tabpanel">
@@ -206,5 +238,99 @@
         }
     }
 </script>
+
+@if(empty($userData->mcID))
+<div class="modal fade" id="MinecraftAuthModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">註冊戰爭創界帳號</h4>
+            </div>
+
+                <ul class="nav nav-tabs tabs-2" role="tablist">
+                    <li class="nav-item active">
+                        <a class="nav-link" data-toggle="tab" href="#genuineUser" role="tab">正版玩家</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#happyVerUser" role="tab">開心版玩家</a>
+                    </li>
+                </ul>
+            <div class="tab-content">
+                <div class="tab-pane active fade in" id="genuineUser" role="tabpanel">
+                    <form action="./mojangAuthGateway" method="POST">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="username" name="moj_username" type="text" class="validate">
+                                    <label for="icon_prefix">Mojang電郵</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">vpn_key</i>
+                                    <input id="moj_password" name="moj_password" type="password" class="validate">
+                                    <label for="icon_prefix">Mojang密碼</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">pan_tool</i>
+                                    <input id="server_password" name="server_password" type="password" class="validate">
+                                    <label for="icon_prefix">伺服器登入密碼</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <center>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                            <button type="submit" class="btn btn-primary">註冊</button>
+                        </center>
+                        <br/>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </form>
+                </div>
+                <div class="tab-pane fade in" id="mcHappyVerUser" role="tabpanel">
+                    <form action="./mcHappyVerReg" method="POST">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="mc_username" name="mc_username" type="text" class="validate">
+                                    <label for="icon_prefix">伺服器登入帳號</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+                                <div class="input-field">
+                                    <i class="material-icons prefix">pan_tool</i>
+                                    <input id="mc_password" name="mc_password" type="text" class="validate">
+                                    <label for="icon_prefix">伺服器登入密碼</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <center>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                            <button type="button" class="btn btn-primary">註冊</button>
+                        </center>
+                        <br/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
 </body>
 </html>

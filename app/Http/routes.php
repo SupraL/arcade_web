@@ -58,8 +58,11 @@ Route::get('/games',function(){
 Route::get('/games/minecraft',function(){
    return view('minecraftHome');
 });
+Route::post('/mojangAuthGateway','MemberController@doMojangAuth');
+Route::post('/mcHappyVerUser','MemberController@doMcHappyVerAuth');
 
 Route::get('/testController','TestController@showTest');
+Route::get('/mcSkinViewer/{username}','McSkinViewController@get_skin');
 
 //----admin----//
 Route::get('/admin', function(){

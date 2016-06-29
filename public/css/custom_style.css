@@ -63,3 +63,20 @@ body {
 .delCartProduct:hover{
     cursor: pointer;
 }
+
+.skillItem > .tooltip > .tooltip-inner {
+    max-width: 200px;
+    /* If max-width does not work, try using width instead */
+    width: 200px;
+}
+
+body > .tooltip > .tooltip-inner {
+    max-width: 250px;
+    /* If max-width does not work, try using width instead */
+    width: 250px;
+}
+
+.greyImage{
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+}
