@@ -42,12 +42,6 @@
     </div>
 </div>
 <div class="container">
-    <h3 class="h3-responsive text-center">註冊會員 - 步驟(1 / 3)</h3>
-    <progress class="progress" value="33" max="99">
-        <div class="progress">
-            <span class="progress-bar" style="width: 25%;">25%</span>
-        </div>
-    </progress>
     <?php
         if(isset($errorCode)){
             if($errorCode < 0){
@@ -97,6 +91,8 @@
     ?>
     <div class="card">
         <div class="container">
+            <h3 class="h3-responsive text-center">註冊 ArcadeCrafts 會員</h3>
+            <hr/>
             <form method="POST" action="./register">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">

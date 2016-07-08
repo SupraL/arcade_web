@@ -52,12 +52,8 @@ Route::post('/delCartProduct','ShopController@removeFromCart');
 Route::post('/updateCart','ShopController@doUpdateCartQuantity');
 Route::post('/doCartCheckout','ShopController@doCartCheckout');
 Route::get('/viewOrderDetails/{id}','MemberController@getOrderDetails');
-Route::get('/games',function(){
-    return view('games');
-});
-Route::get('/games/minecraft',function(){
-   return view('minecraftHome');
-});
+Route::get('/games','GamesController@doIndex');
+Route::get('/games/{id}','GamesController@doRedirect');
 Route::post('/mojangAuthGateway','MemberController@doMojangAuth');
 Route::post('/mcHappyVerReg','MemberController@doMcHappyVerAuth');
 
