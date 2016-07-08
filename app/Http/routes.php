@@ -59,7 +59,7 @@ Route::get('/games/minecraft',function(){
    return view('minecraftHome');
 });
 Route::post('/mojangAuthGateway','MemberController@doMojangAuth');
-Route::post('/mcHappyVerUser','MemberController@doMcHappyVerAuth');
+Route::post('/mcHappyVerReg','MemberController@doMcHappyVerAuth');
 
 Route::get('/testController','TestController@showTest');
 Route::get('/mcSkinViewer/{username}','McSkinViewController@get_skin');

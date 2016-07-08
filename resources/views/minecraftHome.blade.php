@@ -25,7 +25,7 @@
     <div class="container">
         <ol class="breadcrumb" style="padding: 10px">
             <li><a href="../">主頁</a></li>
-            <li><a href="./">遊戲</a></li>
+            <li><a href="../games">遊戲</a></li>
             <li class="active">Minecraft</li>
         </ol>
     </div>

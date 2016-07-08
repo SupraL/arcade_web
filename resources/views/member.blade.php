@@ -40,6 +40,12 @@
                     case "2":
                         echo "<script>toastr.warning('此帳號已經綁定過了>.^');</script>";
                         break;
+                    case "11":
+                        echo "<script>toastr.warning('此名稱已經存在!');</script>";
+                        break;
+                    case "22":
+                        echo "<script>toastr.warning('此名稱已被正版玩家使用!');</script>";
+                        break;
                     case "-1":
                         echo "<script>toastr.success('Minecraft帳號綁定成功！');</script>";
                         break;
@@ -257,7 +263,7 @@
                         <a class="nav-link" data-toggle="tab" href="#genuineUser" role="tab">正版玩家</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#happyVerUser" role="tab">開心版玩家</a>
+                        <a class="nav-link" data-toggle="tab" href="#mcHappyVerUser" role="tab">開心版玩家</a>
                     </li>
                 </ul>
             <div class="tab-content">
@@ -322,9 +328,10 @@
                         <hr/>
                         <center>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
-                            <button type="button" class="btn btn-primary">註冊</button>
+                            <button type="submit" class="btn btn-primary">註冊</button>
                         </center>
                         <br/>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
                 </div>
             </div>
