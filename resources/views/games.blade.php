@@ -29,5 +29,14 @@
         </ol>
     </div>
 </div>
+<div class="container">
+    <h3>遊戲選單</h3>
+    <hr/>
+    @foreach($gamesData as $game)
+        <div class="col-md-4">
+            <a href="./games/{{$game->gameID}}"><img src="./image/{{$game->gameID}}" style="height:100px;width:100px"/></a>
+        </div>
+    @endforeach
+</div>
 </body>
 </html>
