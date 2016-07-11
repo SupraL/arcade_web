@@ -66,6 +66,7 @@ Route::get('/admin', function(){
 });
 Route::post('/admin','Admin\LoginController@doLogin');
 Route::get('/admin/index','Admin\IndexController@doIndex');
+Route::post('/admin/index','Admin\IndexController@doPostAction');
 Route::get('/admin/redeemCode','Admin\RedeemController@showRedeemPage');
 Route::post('/admin/redeemCode','Admin\RedeemController@doRedeem');
 Route::get('/admin/game','Admin\GameController@showGamePage');
