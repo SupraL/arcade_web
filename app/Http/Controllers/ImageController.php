@@ -20,8 +20,10 @@ class ImageController extends Controller
                     $contents = View::make('showImage')->with("imageData", $imageData);
                     break;
                 case "gam":
+                    $bgOption = Input::get('bg');
+                    $bgOption = (isset($bgOption)) ? $bgOption : "0";
                     $imageData = DB::table('games')->where('gameID', $id)->first();
-                    $contents = View::make('showImage')->with("imageData", $imageData);
+                    $contents = View::make('showImage')->with("imageData", $imageData)->with('bgOption',$bgOption);
                     break;
             }
             $response = Response::make($contents, 200);
@@ -30,6 +32,15 @@ class ImageController extends Controller
         } catch (\ErrorException $e){
             return 'not exist';
         }
-
+    }
+    public function getBackgroundImage($id){
+        try {
+            $imageData = DB::table('games')->where('gameID',$id)->first();
+            $contents = View::make('showImage')->with("imageData", $imageData);
+            $response = Response::make($contents, 200);
+            $response->header('Content-Type', 'Content-Type: image/jpeg');
+        } catch (\ErrorException $e){
+            return 'not exist';
+        }
     }
 }
