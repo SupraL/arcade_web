@@ -1,7 +1,7 @@
 <?php
-    /*$opts = array('http' => array('header'=> 'Cookie: ' . $_SERVER['HTTP_COOKIE']."\r\n"));
-    $context = stream_context_create($opts);
-    $userData = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/checkLogin.php', false, $context));*/
+    if($settingData->isOpen == 0){
+        echo '<meta http-equiv="refresh" content="0; url=./close" />';
+    }
 ?>
 <script>
     $(document).ready(function(){

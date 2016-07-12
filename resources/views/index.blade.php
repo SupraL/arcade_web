@@ -16,7 +16,7 @@
     <title>ArcadeCrafts</title>
 </head>
 <body>
-    @extends('header')
+@extends('header')
     <div id="carousel-example-1" class="carousel slide carousel-fade carousel-bg" data-interval="false">
         <ol class="carousel-indicators">
             @foreach($gameData as $key=>$game)

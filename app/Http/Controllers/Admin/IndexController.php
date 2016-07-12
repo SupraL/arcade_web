@@ -15,11 +15,14 @@ class IndexController extends Controller
 {
     public function doIndex(){
         $settingData = DB::table('websetting')->first();
-        return view('adminView\index')->with('settingData',$settingData);
+        $pdo = DB::connection()->getPdo();
+        return view('adminView\index')->with('settingData',$settingData)->with('pdo',$pdo);
     }
 
     public function doPostAction(){
         $isOpen = Input::get('chk_webStatus');
+        $webName = Input::get('webName');
+        $closeDesc = Input::get('closeDescription');
         if(isset($isOpen)){
             DB::table('websetting')->where('SettingID','set00001')->update(
                 array(
@@ -28,7 +31,15 @@ class IndexController extends Controller
             );
             return Redirect::to('/admin/index');
         } else {
-
+            if(isset($webName) && isset($closeDesc)){
+                DB::table('websetting')->where('SettingID','set00001')->update(
+                    array(
+                        'webTitle'=>$webName,
+                        'closeDescription'=>$closeDesc
+                    )
+                );
+                return Redirect::to('/admin/index');
+            }
         }
     }
 }

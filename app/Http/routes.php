@@ -16,6 +16,7 @@
 });*/
 
 Route::get('/','IndexController@showIndex');
+Route::get('/close','SettingController@getClose');
 Route::get('/viewNotice/{id}','NoticeController@showNotice');
 Route::get('/viewNotice','AllNoticeController@showNotice');
 
