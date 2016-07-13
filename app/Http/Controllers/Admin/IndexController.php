@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Session;
 class IndexController extends Controller
 {
     public function doIndex(){
+        if(!Session::has('admin_userID')){
+            return view('adminView\login');
+        }
         $settingData = DB::table('websetting')->first();
         $pdo = DB::connection()->getPdo();
         return view('adminView\index')->with('settingData',$settingData)->with('pdo',$pdo);

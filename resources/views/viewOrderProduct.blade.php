@@ -21,17 +21,21 @@
         <div class="col-md-10 col-md-offset-1">
             <table class="table table-striped table-hover">
                 <thead><tr><th>#</th><th>商品名稱</th><th>數量</th><th>價錢</th></tr></thead>
-                @foreach($orderDetails as $order)
-                    <tr>
-                        <td>{{$order->productID}}</td>
-                        <td>{{$order->productName}}</td>
-                        <td>{{$order->quantity}}</td>
-                        <td>{{$order->price}}</td>
-                    </tr>
-                @endforeach
+                @if(isset($orderDetails))
+                    @foreach($orderDetails as $order)
+                        <tr>
+                            <td>{{$order->productID}}</td>
+                            <td>{{$order->productName}}</td>
+                            <td>{{$order->quantity}}</td>
+                            <td>{{$order->price}}</td>
+                        </tr>
+                    @endforeach
+                @endif
             </table>
             <hr/>
+            @if(isset($order))
             <h5 class="h5-responsive">總金額：{{$order->totalPrice}}</h5>
+            @endif
         </div>
     </div>
 </div>

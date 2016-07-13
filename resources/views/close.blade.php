@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ secure_asset('css/font-awesome-animation.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ secure_asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/mdb.css') }}">
     <link rel="stylesheet" href="{{ secure_asset('css/custom_style.css') }}">
@@ -15,13 +16,18 @@
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
 </head>
-<body>
+<body class="info-color">
 <?php
     if($settingData->isOpen == 1){
         echo '<meta http-equiv="refresh" content="0; url=./" />';
-    } else {
-        echo $settingData->closeDescription;
     }
 ?>
+<div class="container" style="margin-top:100px">
+    <center>
+        <i class="fa fa-wrench faa-wrench animated fa-5x" aria-hidden="true" style="color:white"></i>
+        <h4 class="h4-responsive" style="color:white">網站正在下線維護</h4>
+        <pre>{{$settingData->closeDescription}}</pre>
+    </center>
+</div>
 </body>
 </html>
