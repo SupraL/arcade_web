@@ -191,7 +191,7 @@
             </div>
             <!--Body-->
             <div class="modal-body">
-                <iframe id="orderDetailsFrame" src="" frameBorder="0" scrolling="yes" style="width:100%;height:100%"></iframe>
+                <iframe id="orderDetailsFrame" src="" frameBorder="0" style="width:100%;height:100%;"></iframe>
             </div>
             <!--Footer-->
             <div class="modal-footer">
@@ -201,6 +201,12 @@
         <!--/.Content-->
     </div>
 </div>
+<style>
+    iframe::-webkit-scrollbar {
+        display: none;
+    }
+
+</style>
 <script>
     $(document).ready(function(){
         $(".orderDetailsLink").click(function(){
