@@ -68,7 +68,7 @@ if(isset($errorCode)){
                 </div>
             </div>
             <center>
-                <button type="button" class="btn cancelButton">取消</button>
+                <a href="./"><button type="button" class="btn cancelButton">取消</button></a>
                 <button type="submit" class="btn indexButton" id="btnLogin">登入</button>
             </center>
             <br/>

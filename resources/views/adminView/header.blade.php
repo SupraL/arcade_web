@@ -3,6 +3,7 @@
         <a href="./index"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid" style="width:100%"></a>
     </div>
     <ul class="collapsible collapsible-accordion">
+        <li><a href="./index" class="waves-effect">網站管理</a>
         <li><a class="collapsible-header waves-effect">遊戲管理</a>
             <div class="collapsible-body">
                 <ul>

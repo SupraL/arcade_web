@@ -45,9 +45,9 @@
             <td>{{$cashCode->quantity}}</td>
             <td>
                 @if($cashCode->used == 0)
-                    <img src="{{secure_asset('img/available.png')}}" style="width:25px;height:25px"/>
+                    <i class="fa fa-check text-success fa-2x"></i>
                 @else
-                    <img src="{{secure_asset('img/unavailable.png')}}" style="width:25px;height:25px"/>
+                    <i class="fa fa-times text-danger fa-2x"></i>
                 @endif
             </td>
         </tr>

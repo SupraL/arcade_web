@@ -116,7 +116,7 @@
                     <div class="col-md-6 col-md-offset-3">
                         <div class="input-field">
                             <i class="material-icons prefix">vpn_key</i>
-                            <input id="password" name="password" type="text" class="validate">
+                            <input id="password" name="password" type="password" class="validate">
                             <label for="icon_prefix">密碼</label>
                         </div>
                     </div>
@@ -125,7 +125,7 @@
                     <div class="col-md-6 col-md-offset-3">
                         <div class="input-field">
                             <i class="material-icons prefix">lock</i>
-                            <input id="conPassword" name="conPassword" type="text" class="validate">
+                            <input id="conPassword" name="conPassword" type="password" class="validate">
                             <label for="icon_prefix">確認密碼</label>
                         </div>
                     </div>

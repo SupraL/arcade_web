@@ -16,6 +16,7 @@
 });*/
 
 Route::get('/','IndexController@showIndex');
+Route::get('/close','SettingController@getClose');
 Route::get('/viewNotice/{id}','NoticeController@showNotice');
 Route::get('/viewNotice','AllNoticeController@showNotice');
 
@@ -66,9 +67,11 @@ Route::get('/admin', function(){
 });
 Route::post('/admin','Admin\LoginController@doLogin');
 Route::get('/admin/index','Admin\IndexController@doIndex');
+Route::post('/admin/index','Admin\IndexController@doPostAction');
 Route::get('/admin/redeemCode','Admin\RedeemController@showRedeemPage');
 Route::post('/admin/redeemCode','Admin\RedeemController@doRedeem');
 Route::get('/admin/game','Admin\GameController@showGamePage');
+Route::post('/admin/game','Admin\GameController@doModify');
 Route::get('/admin/order','Admin\OrderController@showOrderPage');
 
 //----api----//

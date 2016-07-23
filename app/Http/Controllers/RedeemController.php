@@ -17,6 +17,7 @@ class RedeemController extends Controller
         $errorCode = -1;
         $cashCode = Input::get('cashcode');
 
+        $userData = DB::table('users')->where('userID',Session::get('userID'))->first();
         $cashCodeCount = DB::table('cashcards')->where('cardNumber',$cashCode)->where('used','0')->count();
         $cashCodeData = DB::table('cashcards')->join('products','cashcards.productID','=','products.productID')->where('cardNumber',$cashCode)->where('used','0')->first();
 
@@ -41,6 +42,16 @@ class RedeemController extends Controller
                     'uid' => Session::get('userID'),
                     'redeemDate' => date('Y-m-d H:i:s'))
             );
+            switch($cashCodeData->productName){
+                case "AP":
+                    $newCash = $userData->cashPoint + $cashCodeData->quantity;
+                    DB::table('users')->where('userID',Session::get('userID'))->update(
+                        array(
+                            'cashPoint' => $newCash
+                        )
+                    );
+                    break;
+            }
         }
         return Redirect::to('/member'.'#redeem')->with('errorCode',$errorCode)->with('cashCodeData',$cashCodeData)->with('type','redeem');
     }

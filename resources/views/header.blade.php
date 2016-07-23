@@ -1,7 +1,7 @@
 <?php
-    /*$opts = array('http' => array('header'=> 'Cookie: ' . $_SERVER['HTTP_COOKIE']."\r\n"));
-    $context = stream_context_create($opts);
-    $userData = json_decode(file_get_contents('http://'.$_SERVER['SERVER_NAME'].'/forum/plugin/reg/checkLogin.php', false, $context));*/
+    if($settingData->isOpen == 0){
+        echo '<meta http-equiv="refresh" content="0; url=./close" />';
+    }
 ?>
 <script>
     $(document).ready(function(){
@@ -32,7 +32,6 @@
                                 <li class="divider hidden-lg"></li>
                                 <li><a href="{{ URL::asset('/member') }}">帳號資訊</a></li>
                                 <li><a href="{{ URL::asset('/member#record') }}">交易記錄</a></li>
-                                <li><a href="{{ URL::asset('/buyCash') }}">儲值點數</a></li>
                             </ul>
                         </li>
                     @else

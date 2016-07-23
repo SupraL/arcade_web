@@ -8,6 +8,7 @@ class IndexController extends Controller
 {
     public function showIndex(){
         $notices = DB::table('notices')->join('games','notices.gameID','=','games.gameID')->take(5)->get();
-        return view('index')->with('noticeList',$notices);
+        $gameData = DB::table('games')->where('indexImage','!=','null')->get();
+        return view('index')->with('noticeList',$notices)->with('gameData',$gameData);
     }
 }

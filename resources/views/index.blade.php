@@ -16,71 +16,34 @@
     <title>ArcadeCrafts</title>
 </head>
 <body>
-    @extends('header')
+@extends('header')
     <div id="carousel-example-1" class="carousel slide carousel-fade carousel-bg" data-interval="false">
         <ol class="carousel-indicators">
-            <li data-target="#carousel-example-1" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-1" data-slide-to="1"></li>
-            <li data-target="#carousel-example-1" data-slide-to="2"></li>
-            <li data-target="#carousel-example-1" data-slide-to="3"></li>
+            @foreach($gameData as $key=>$game)
+                @if($key == 0)
+                    <li data-target="#carousel-example-1" data-slide-to="{{$key}}" class="active"></li>
+                @else
+                    <li data-target="#carousel-example-1" data-slide-to="{{$key}}"></li>
+                @endif
+            @endforeach
         </ol>
         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img class="indexGameImage" src="{{ URL::asset('img/bns02_pc_1920.jpg') }}" alt="First slide">
-                <div class="carousel-caption">
-                    <div class="verticalcenter">
-                        <div class="animated fadeInDown">
-                            <h3 class="h3-responsive">劍靈</h3>
-                            <p>開啟3D線上遊戲大門 畫下里程碑的不朽經典巨作<br/>劍與魔法交織的奇幻世界 英雄與戰亂的浪漫冒險</p>
-                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
-                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
-                            <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
+            @foreach($gameData as $key=>$game)
+                <div class="item {{($key == 0)?'active':''}}">
+                    <img class="indexGameImage" src="./image/{{$game->gameID}}?bg=1" alt="First slide">
+                    <div class="carousel-caption">
+                        <div class="verticalcenter">
+                            <div class="animated fadeInDown">
+                                <h3 class="h3-responsive">{{$game->gameName}}</h3>
+                                <p>{!!html_entity_decode($game->gameDescription)  !!}</p>
+                                <a class="btn-floating btn-large red" href="./games/{{$game->gameID}}"><i class="fa fa-home"></i></a>
+                                <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
+                                <a class="btn-floating btn-large blue" href="./shop"><i class="fa fa-shopping-cart"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item">
-                <img class="indexGameImage" src="{{ URL::asset('img/aion01_pc_1920.jpg') }}" alt="Second slide">
-                <div class="carousel-caption">
-                    <div class="verticalcenter">
-                        <div class="animated fadeInDown">
-                            <h3 class="h3-responsive">AION</h3>
-                            <p>扮演天族或魔族，為了生存與理想，努力成為種族的英雄<br/>展開華麗的翅膀飛翔及戰鬥、體驗超乎想像的奇幻世界</p>
-                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
-                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
-                            <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="indexGameImage" src="{{ URL::asset('img/l201_pc_1920.jpg') }}" alt="Third slide">
-                <div class="carousel-caption">
-                    <div class="verticalcenter">
-                        <div class="animated fadeInDown">
-                            <h3 class="h3-responsive">新天堂II</h3>
-                            <p>開啟3D線上遊戲大門 畫下里程碑的不朽經典巨作<br/>劍與魔法交織的奇幻世界 英雄與戰亂的浪漫冒險</p>
-                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
-                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
-                            <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <img class="indexGameImage" src="{{ URL::asset('img/mxm02_pc_1920.jpg') }}" alt="Third slide">
-                <div class="carousel-caption">
-                    <div class="verticalcenter">
-                        <div class="animated fadeInDown">
-                            <h3 class="h3-responsive">MXM</h3>
-                            <p>集結NC全明星的華麗對戰 熟悉的角色和全新英雄連袂出擊<br/>千變萬化的全新玩法 顛覆傳統MOBA與動作遊戲的刻板印象</p>
-                            <a class="btn-floating btn-large red" href="#"><i class="fa fa-home"></i></a>
-                            <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>
-                            <a class="btn-floating btn-large blue"><i class="fa fa-shopping-cart"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <a class="left carousel-control" href="#carousel-example-1" role="button" data-slide="prev">
             <span class="icon-prev" aria-hidden="true"></span>
@@ -127,6 +90,88 @@
                         <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}/api.php?mod=js&bid=3"></script>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="section-title st-mdb" style="margin-bottom:5px">伺服器特色</h5>
+                <h5><small>AlsaceWork使用比例型式製作伺服器,三個主題伺服,三個小遊戲伺服.令伺服器不失多類型及特色.現時主題伺服器以公會生存為主,既擁有RPG特色又有生存樂趣,迎合不同玩家的不同需求!而MiniGame方面以戰爭為主,令玩家遊戲時不但有快速的節奏而且不失其策略性.小遊戲分為三個伺服,以多種戰鬥格式:槍’刀’速’智進行遊戲,考驗你的智慧’思考及速度等等.</small></h5>
+            </div>
+            <div class="col-md-6">
+                <h5 class="section-title st-mdb" style="margin-bottom:5px">團隊介紹</h5>
+                <h5><small>AlsaceWork團隊團員各自擁有相當的伺服器製作經驗,由武器設計師到管理級別都有專業人士.團員製作出高質素的伺服,為的是令玩家擁有一個真真正正的難忘的遊戲時光.AlsaceWork團隊分為"系統管理-伺服託管-技術-製作及優化-伺服管理"作子團隊,各自不同的分工令AlsaceWork可以以較高質素營運.其中各子團隊都有不同工作,令每一個細節都可以運作得清晰明確.</small></h5>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/code.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>WEBPRESS</b> NEW WEB SYSTEM</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>網服使用WordPress網頁系統,以方便即時發佈有關伺服器更新資訊.而且伺服更自行製作不同的動態GUI頁面,令用戶不需進行繁複的動作瀏覽網頁.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/link.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>DATA LINK</b><br/>SUPPORT</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>伺服器及資料庫系統連結是本伺服的特色之一,因此網頁的系統功能也因此與Minecraft伺服器連接起來.可令玩家與網頁及伺服器有更多的互動.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/talk.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>XENFORO 1.5</b><br/>FORUM</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>AlsaceWork是一個強調網頁互動的伺服團隊,因此只有一堆自製系統是沒有用的.所以我們使用了Xenforo網上論壇,給大家遊玩伺服器之餘,也可以上上論壇與玩家討論一下.</small></h5>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/shop.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>ALSACEWORK</b><br/>ONLINE SHOP</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>AlsaceWork團隊的技術人員自行製作網上商店系統,擁有全面的php製作,數據庫系統選用32GB Ram伺服器主機存記數據,因此玩家可以快捷地在我們的網上商店進行交易,買賣等.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/lock.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>WEB SECURITY</b><br/>SSL</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>我們使用SSL安全系統,保護玩家網上用戶資料.保障玩家不會因為黑客攻擊而損失用戶資料,所以可以放心使用我們的網上系統.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/file.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>SERVER SKIN</b><br/>RESOURCEPACK</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>自家製作Minecraft資源包,以加強玩家在伺服器的遊戲體驗.資源包內有大量字體材質圖,物品等等,可以令伺服器的物品,文字有突破性的轉變.讓玩家可體驗AlsaceWork更多!</small></h5>
+                </center>
             </div>
         </div>
     </div>
