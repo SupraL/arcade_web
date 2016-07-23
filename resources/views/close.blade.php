@@ -25,7 +25,8 @@
 <div class="container" style="margin-top:100px">
     <center>
         <i class="fa fa-wrench faa-wrench animated fa-5x" aria-hidden="true" style="color:white"></i>
-        <h4 class="h4-responsive" style="color:white">網站正在下線維護</h4>
+        <h4 class="h4-responsive" style="color:white">網站正在進行維護，請稍後再試。</h4>
+        <h5 class="h5-responsive" style="color:white">Our website is under maintenance, please try again later.</h5>
         <pre>{{$settingData->closeDescription}}</pre>
     </center>
 </div>

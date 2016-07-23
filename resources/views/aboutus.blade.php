@@ -48,7 +48,7 @@
         <div class="tab-pane fade in active" id="tabus1" role="tabpanel">
             <div class="card">
                 <div class="container">
-                    <h3 class="h3-responsive">關於我們1</h3>
+                    <h3 class="h3-responsive">關於我們</h3>
                     <hr />
                     <pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
                         <h4 class="h4-responsive">介紹</h4>
