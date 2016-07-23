@@ -50,3 +50,14 @@ nav ul li a{
     color:#FFFFFF;
     background-color: #263238;
 }
+
+.st-mdb{
+    border-left:4px solid #45526E;
+}
+.st-mdb small{
+    border-left:2px solid #45526E;
+}
+.featureIcon{
+    height:80px;
+    width:80px
+}

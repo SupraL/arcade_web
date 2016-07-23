@@ -92,6 +92,88 @@
                 </div>
             </div>
         </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-6">
+                <h5 class="section-title st-mdb" style="margin-bottom:5px">伺服器特色</h5>
+                <h5><small>AlsaceWork使用比例型式製作伺服器,三個主題伺服,三個小遊戲伺服.令伺服器不失多類型及特色.現時主題伺服器以公會生存為主,既擁有RPG特色又有生存樂趣,迎合不同玩家的不同需求!而MiniGame方面以戰爭為主,令玩家遊戲時不但有快速的節奏而且不失其策略性.小遊戲分為三個伺服,以多種戰鬥格式:槍’刀’速’智進行遊戲,考驗你的智慧’思考及速度等等.</small></h5>
+            </div>
+            <div class="col-md-6">
+                <h5 class="section-title st-mdb" style="margin-bottom:5px">團隊介紹</h5>
+                <h5><small>AlsaceWork團隊團員各自擁有相當的伺服器製作經驗,由武器設計師到管理級別都有專業人士.團員製作出高質素的伺服,為的是令玩家擁有一個真真正正的難忘的遊戲時光.AlsaceWork團隊分為"系統管理-伺服託管-技術-製作及優化-伺服管理"作子團隊,各自不同的分工令AlsaceWork可以以較高質素營運.其中各子團隊都有不同工作,令每一個細節都可以運作得清晰明確.</small></h5>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/code.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>WEBPRESS</b> NEW WEB SYSTEM</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>網服使用WordPress網頁系統,以方便即時發佈有關伺服器更新資訊.而且伺服更自行製作不同的動態GUI頁面,令用戶不需進行繁複的動作瀏覽網頁.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/link.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>DATA LINK</b><br/>SUPPORT</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>伺服器及資料庫系統連結是本伺服的特色之一,因此網頁的系統功能也因此與Minecraft伺服器連接起來.可令玩家與網頁及伺服器有更多的互動.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/talk.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>XENFORO 1.5</b><br/>FORUM</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>AlsaceWork是一個強調網頁互動的伺服團隊,因此只有一堆自製系統是沒有用的.所以我們使用了Xenforo網上論壇,給大家遊玩伺服器之餘,也可以上上論壇與玩家討論一下.</small></h5>
+                </center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/shop.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>ALSACEWORK</b><br/>ONLINE SHOP</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>AlsaceWork團隊的技術人員自行製作網上商店系統,擁有全面的php製作,數據庫系統選用32GB Ram伺服器主機存記數據,因此玩家可以快捷地在我們的網上商店進行交易,買賣等.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/lock.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>WEB SECURITY</b><br/>SSL</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>我們使用SSL安全系統,保護玩家網上用戶資料.保障玩家不會因為黑客攻擊而損失用戶資料,所以可以放心使用我們的網上系統.</small></h5>
+                </center>
+            </div>
+            <div class="col-md-4">
+                <center>
+                    <div class="row" style="margin-top:10px">
+                        <div class="col-md-3"><img class="featureIcon" src="{{ secure_asset('img/file.png')}}"/></div>
+                        <div class="col-md-9">
+                            <h4 style="text-align:left;margin-top:0"><small><b>SERVER SKIN</b><br/>RESOURCEPACK</small></h4>
+                        </div>
+                    </div>
+                    <h5 style="text-align:left"><small>自家製作Minecraft資源包,以加強玩家在伺服器的遊戲體驗.資源包內有大量字體材質圖,物品等等,可以令伺服器的物品,文字有突破性的轉變.讓玩家可體驗AlsaceWork更多!</small></h5>
+                </center>
+            </div>
+        </div>
     </div>
     @extends('footer')
     <div id="fb-root"></div>
