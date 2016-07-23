@@ -48,7 +48,7 @@
         <div class="tab-pane fade in active" id="tabus1" role="tabpanel">
             <div class="card">
                 <div class="container">
-                    <h3 class="h3-responsive">關於我們</h3>
+                    <h3 class="h3-responsive">關於我們1</h3>
                     <hr />
                     <pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
                         <h4 class="h4-responsive">介紹</h4>
@@ -284,7 +284,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
 
 請遵守行為規範：
 協助我們於本網站、遊戲內及論壇上提供一個良好的社群環境，並鼓勵其他不了解行為典範的玩家一同閱讀及遵守。
-有關本工作室的官方討論區（暨支援平台）的處分政策則已經刊載於《討論區會員使用守則》，討論區與討論區的
+有關本工作室的官方討論區（暨支援平台）的處分政策則已經刊載於《討論區會員使用守則》，討論區的額外政策將會根據該守則處理，但以不違背本政策作優先。
 						</pre>
                 </div>
             </div>
