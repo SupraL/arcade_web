@@ -14,7 +14,7 @@ class GamesController extends Controller
 
     public function doRedirect($id){
         switch($id){
-            case "gam00005":
+            case "gam00001":
                 return view('minecraftHome');
             default:
                 return Redirect::to('./');
