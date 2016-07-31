@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Models;
 use DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
@@ -164,6 +165,22 @@ class MemberController extends Controller
         }
         return Redirect::to('/member')->with('errorCode',$errorCode)->with('type','openGame');
     }
+
+    public function doUploadReceipt(){
+        $imgReceipt = file_get_contents($_FILES['imgReceipt']['tmp_name']);
+        $orderID = Input::get('receipt_orderID');
+        $orderDetails = DB::table('orders')->where('orderID',$orderID)->first();
+        $errorCode = -1;
+        if(Session::get('userID') == $orderDetails->uid) {
+            DB::table('orders')->where('orderID', $orderID)->update(
+                array('receipt' => $imgReceipt)
+            );
+        } else {
+            $errorCode = 1;
+        }
+        return Redirect::to('/member#buyRecord')->with('errorCode',$errorCode)->with('type','updateReceipt');
+    }
+
     private function generateRandomString($length = 32) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ~!@#$%^&*()_+]["/.,/*-+';
         $charactersLength = strlen($characters);

@@ -32,6 +32,16 @@
                         break;
                 }
             }
+            if($type == "updateReceipt"){
+                switch($errorCode){
+                    case "1":
+                        echo "<script>toastr.warning('資料並不符合唷!');</script>";
+                        break;
+                    case "-1":
+                        echo "<script>toastr.success('收據資料更新成功!');</script>";
+                        break;
+                }
+            }
             if($type == "openGame"){
                 switch($errorCode){
                     case "1":
@@ -160,7 +170,7 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <table class="table table-striped table-hover">
-                                <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>付款方法</th><th>狀態</th></tr></thead>
+                                <thead><tr><th>訂單編號</th><th>價錢</th><th>時間</th><th>付款方法</th><th>狀態</th><th>收據</th></tr></thead>
                                 @foreach($orderRecordList as $order)
                                     <tr>
                                         <td><a href="#" class="orderDetailsLink" data-toggle="modal" data-target="#orderDetailsModal">{{$order->orderID}}</a></td>
@@ -168,6 +178,19 @@
                                         <td>{{$order->orderDateTime}}</td>
                                         <td>{{$order->methodName}}</td>
                                         <td>{{$order->statusName}}</td>
+                                        <td>
+                                            <?php
+                                                if($order->methodID == 'mth00001'){
+                                                    if(isset($order->receipt)){
+                                                        echo "<a class='lnkViewReceipt' data-toggle='modal' data-target='#ViewReceiptModal'>查看</a> / <a href='' class='lnkUploadReceipt' data-toggle='modal' data-target='#UploadModal'>更改</a>";
+                                                    } else {
+                                                        echo "<a href='' class='lnkUploadReceipt' data-toggle='modal' data-target='#UploadModal'>按我上傳</a>";
+                                                    }
+                                                } else {
+                                                    echo "N/A";
+                                                }
+                                            ?>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>
@@ -214,8 +237,18 @@
             $("#orderDetailsFrame").attr('src',"./viewOrderDetails/" + $(this).text());
             $("#orderDetailsFrame").css('overflow-x','hidden');
         });
+        $(".lnkUploadReceipt").click(function(){
+            $('#receipt_orderID').val($(this).parent().parent().children("td:first").children("a").text());
+        });
+        $(".lnkViewReceipt").click(function(){
+            $("#viewReceiptImage").attr('src',"./image/" + $(this).parent().parent().children("td:first").children("a").text() + "?receipt=1");
+            $("#viewReceiptImage").css('overflow-x','hidden');
+        });
     });
-
+    function resizeIframe(obj) {
+        obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+        obj.style.width = obj.contentWindow.document.body.scrollWidth + 'px';
+    }
 
     var hash = window.location.hash;
     if(hash != "") {
@@ -250,6 +283,47 @@
         }
     }
 </script>
+
+<div class="modal fade" id="ViewReceiptModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">收據圖片</h4>
+            </div>
+            <div class="modal-body" height="100%">
+                <img src="" id="viewReceiptImage" height="300" width="100%"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="UploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">上傳收據</h4>
+                <hr style="margin-bottom: 5px"/>
+                <form action="./uploadReceipt" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>請選擇檔案</h5>
+                            <input type="file" name="imgReceipt" id="imgReceipt" accept="image/*" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" id="receipt_orderID" name="receipt_orderID" value="">
+                    <center><button type="submit" class="btn btn-primary">上傳</button></center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 @if(empty($userData->mcID))
 <div class="modal fade" id="MinecraftAuthModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

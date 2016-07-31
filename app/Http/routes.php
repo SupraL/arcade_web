@@ -61,6 +61,8 @@ Route::post('/mcHappyVerReg','MemberController@doMcHappyVerAuth');
 Route::get('/testController','TestController@showTest');
 Route::get('/mcSkinViewer/{username}','McSkinViewController@get_skin');
 
+Route::post('/uploadReceipt','MemberController@doUploadReceipt');
+
 //----admin----//
 Route::get('/admin', function(){
    return view('/adminView/login');

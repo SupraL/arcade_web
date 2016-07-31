@@ -7,6 +7,7 @@ use DB;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 
 class ImageController extends Controller
@@ -24,6 +25,14 @@ class ImageController extends Controller
                     $bgOption = (isset($bgOption)) ? $bgOption : "0";
                     $imageData = DB::table('games')->where('gameID', $id)->first();
                     $contents = View::make('showImage')->with("imageData", $imageData)->with('bgOption',$bgOption);
+                    break;
+                case "ord":
+                    $receiptOption = Input::get('receipt');
+                    $receiptOption = (isset($receiptOption)) ? $receiptOption : "0";
+                    $imageData = DB::table('orders')->where('orderID',$id)->first();
+                    if(Session::get('userID') != $imageData->uid)
+                        $receiptOption = 0;
+                    $contents = View::make('showImage')->with("imageData", $imageData)->with('receiptOption',$receiptOption);
                     break;
             }
             $response = Response::make($contents, 200);

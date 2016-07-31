@@ -5,6 +5,13 @@ if(isset($bgOption)){
     else
         echo $imageData->indexImage;
 } else {
-    echo $imageData->image;
+    if(isset($receiptOption)){
+        if($receiptOption == '0')
+            echo $imageData->image;
+        else
+            echo $imageData->receipt;
+    }else{
+        echo $imageData->image;
+    }
 }
 ?>
