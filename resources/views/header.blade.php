@@ -57,3 +57,4 @@
         <img style="width:100%;height:100%" src="{{ secure_asset('img/fbMessage.png') }}"/>
     </a>
 </div>
+@extends('footer')

@@ -14,6 +14,12 @@
     <script src="{{ secure_asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
+    <style>
+        #footer{
+            position:absolute;
+            bottom:0;
+        }
+    </style>
 </head>
 <body>
 @extends('header')

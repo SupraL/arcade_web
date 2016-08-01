@@ -371,7 +371,6 @@ Arcade Crafts 遊戲工作室 (以下簡稱「本工作室」或「我們」) �
         </div>
     </div>
 </div>
-@extends('footer')
 <div id="fb-root"></div>
 <script>
     var hash = window.location.hash;

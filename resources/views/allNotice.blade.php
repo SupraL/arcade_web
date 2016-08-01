@@ -13,6 +13,13 @@
     <script src="{{ secure_asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
+    <style>
+        #footer{
+            width:100%;
+            position:absolute;
+            bottom:0;
+        }
+    </style>
 </head>
 <body>
 @extends('header')
@@ -29,89 +36,39 @@
     </div>
 </div>
 <div class="container">
-    <ul class="nav nav-tabs tabs-4" role="tablist" style="margin-top: 15px;">
-        <li id="tab1" class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#tabGame1" role="tab"><img height="30" width="30" src="{{ URL::asset('img/bns.ico') }}"/> 劍靈</a>
-        </li>
-        <li id="tab2" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame2" role="tab"><img height="30" width="30" src="{{ URL::asset('img/aion.ico') }}"/> AION</a>
-        </li>
-        <li id="tab3" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame3" role="tab"><img height="30" width="30" src="{{ URL::asset('img/lineage2.jpg') }}"/> 新天堂II</a>
-        </li>
-        <li id="tab4" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tabGame4" role="tab"><img height="30" width="30" src="{{ URL::asset('img/mxm.png') }}"/> MXM</a>
-        </li>
+    <ul class="nav nav-tabs tabs-{{count($gameData)}}" role="tablist" style="margin-top: 15px;">
+        @foreach($gameData as $game)
+            <li id="{{$game->gameID}}Tab" class="nav-item {{$game->gameID == "gam00001"? "active":""}}">
+                <a class="nav-link" data-toggle="tab" href="#{{$game->gameID}}" role="tab"><img height="30" width="30" src="./image/{{$game->gameID}}"/> {{$game->gameName}}</a>
+            </li>
+        @endforeach
     </ul>
     <div class="tab-content">
-        <div class="tab-pane fade in active" id="tabGame1" role="tabpanel">
-            <div class="card">
-                <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
-                    <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                            @foreach($gameNoticeList1 as $notice)
-                                <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+        @foreach($gameData as $game)
+            <div class="tab-pane fade{{$game->gameID == "gam00001"?" in active":""}}" id="{{$game->gameID}}" role="tablist">
+                <div class="card">
+                    <div class="container">
+                        <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
+                            <thead><tr><th style="width:10%">#</th><th style="width:10%">類型</th><th style="width:60%">標題</th><th style="width:20%">日期</th></tr></thead>
+                            <tbody>
+                                <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}{{Config::get('app.'.$game->gameID.'ForumNoticeBinding')}}"></script>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="tabGame2" role="tabpanel">
-            <div class="card">
-                <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
-                    <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList2 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="tabGame3" role="tabpanel">
-            <div class="card">
-                <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
-                    <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList3 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="tabGame4" role="tabpanel">
-            <div class="card">
-                <div class="container">
-                    <h3 class="h3-responsive">公告消息</h3>
-                    <hr />
-                    <table id="example" class="table" cellspacing="0" width="100%" style="margin-right: 50px">
-                        <thead><tr><th style="width:10%">#</th><th style="width:70%">標題</th><th style="width:20%">日期</th></tr></thead>
-                        <tbody>
-                        @foreach($gameNoticeList4 as $notice)
-                            <tr><td>{{$notice->noticesID}}</td><td><a href="viewNotice/{{$notice->noticesID}}">{{$notice->title}}</a></td><td>{{$notice->noticeDate}}</td></tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 <script>
-    var hash = window.location.hash;
+    $(document).ready(function(){
+        $(".label-pill").each(function(){
+            if($(this).text() == "公告"){
+                $( this ).addClass( "danger-color" );
+            }
+        });
+    });
+    /*var hash = window.location.hash;
     if(hash != ""){
         $(".nav-item")[0].classList.remove("active");
         $("#tabGame1")[0].classList.remove("active");
@@ -142,7 +99,7 @@
                 $("#tabGame1")[0].classList.add("in");
                 break;
         }
-    }
+    }*/
 </script>
 </body>
 </html>

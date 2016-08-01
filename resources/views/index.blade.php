@@ -30,7 +30,9 @@
         <div class="carousel-inner" role="listbox">
             @foreach($gameData as $key=>$game)
                 <div class="item {{($key == 0)?'active':''}}">
+
                     <img class="indexGameImage" src="./image/{{$game->gameID}}?bg=1" alt="First slide">
+
                     <div class="carousel-caption">
                         <div class="verticalcenter">
                             <div class="animated fadeInDown">
@@ -76,9 +78,7 @@
                     <h5 class="h5-responsive"><b>新聞活動</b><i class="fa fa-ellipsis-h fa-lg right"></i></h5>
 
                     <ul class="list-group">
-                        @foreach($noticeList as $notice)
-                                <a href="viewNotice/{{$notice->noticesID}}"><li class="list-group-item"><span class="label {{$notice->gameColor}} label-pill">[{{$notice->gameName}}]</span> {{$notice->title}}</li></a>
-                        @endforeach
+                        <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}/api.php?mod=js&bid=5"></script>
                     </ul>
                 </div>
             </div>
@@ -108,6 +108,7 @@
             </div>
         </div>
         <hr/>
+        <div class="card" style="padding:20px">
         <div class="row">
             <div class="col-md-4">
                 <center>
@@ -178,6 +179,8 @@
                 </center>
             </div>
         </div>
+        </div>
+        <hr/>
         <blockquote class="blockquote bq-primary">
             <p class="bq-title"><b>我們非常需要您！</b></p>
             <p>由於製作《戰爭·創界》人手不足，為加快建設進度，我們懇請有興趣的你，加入我們共同建設一個完善、優質的當個創世神伺服器！</p>
@@ -262,14 +265,26 @@
     </div>
 </div>
 <!--/Modal-->
-    @extends('footer')
+
     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
+    <script>
+        (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
             js.src = "//connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.6&appId=396299537210860";
             fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+        }(document, 'script', 'facebook-jssdk'));
+
+        $(document).ready(function(){
+            var gameColorArray = [];
+            @foreach($gameData as $game)
+                <?php
+                    echo "gameColorArray[$game->gameID] = $game->gameColor;";
+                ?>
+            @endforeach
+
+        });
+    </script>
 </body>
 </html>

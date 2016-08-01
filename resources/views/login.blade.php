@@ -14,6 +14,12 @@
     <script src="{{ secure_asset('js/mdb.js')}}"></script>
     <meta charset="UTF-8">
     <title>ArcadeCrafts</title>
+    <style>
+        #footer{
+            position:absolute;
+            bottom:0;
+        }
+    </style>
 </head>
 <body>
 @extends('header')
@@ -67,8 +73,17 @@ if(isset($errorCode)){
                     </div>
                 </div>
             </div>
+            <div class="row" style="margin-top:10px">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="checkbox" class="filled-in" id="filled-in-box"/>
+                    <label for="filled-in-box">記住用戶名</label>
+                    <div class="pull-right">
+                        <a href="#">忘記密碼</a>
+                    </div>
+                </div>
+            </div>
             <center>
-                <a href="./"><button type="button" class="btn cancelButton">取消</button></a>
+                <a href="./register"><button type="button" class="btn cancelButton">註冊</button></a>
                 <button type="submit" class="btn indexButton" id="btnLogin">登入</button>
             </center>
             <br/>
