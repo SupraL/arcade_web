@@ -1,4 +1,4 @@
-<footer class="page-footer stylish-color" if="footer" id="footer">
+<footer class="page-footer stylish-color hidden-xs hidden-sm" if="footer" id="footer">
     <div class="footer-copyright" style="height:100%">
         <div class="container">
             <div class="row">

@@ -41,12 +41,12 @@ return [
 
     'url' => env('APP_URL', 'http://arcadecrafts.net'),
     
-    'bbsUrl' => env('BBS_URL','https://localhost/forum/'),
+    'bbsUrl' => env('BBS_URL','http://localhost/forum/'),
     'gam00001ForumNoticeBinding' => env('gam00001ForumNoticeBinding','api.php?mod=js&bid=4'),
-    'gam00002ForumNoticeBinding' => env('gam00001ForumNoticeBinding',''),
-    'gam00003ForumNoticeBinding' => env('gam00001ForumNoticeBinding',''),
-    'gam00004ForumNoticeBinding' => env('gam00001ForumNoticeBinding',''),
-    'gam00005ForumNoticeBinding' => env('gam00001ForumNoticeBinding',''),
+    'gam00002ForumNoticeBinding' => env('gam00002ForumNoticeBinding',''),
+    'gam00003ForumNoticeBinding' => env('gam00003ForumNoticeBinding',''),
+    'gam00004ForumNoticeBinding' => env('gam00004ForumNoticeBinding',''),
+    'gam00005ForumNoticeBinding' => env('gam00005ForumNoticeBinding',''),
     /*
     |--------------------------------------------------------------------------
     | Application Timezone

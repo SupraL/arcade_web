@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-4">
                 <div class="text-xs-center">
-                    <h5 class="h5-responsive"><b>新聞活動</b><i class="fa fa-ellipsis-h fa-lg right"></i></h5>
+                    <h5 class="h5-responsive"><b>新聞活動</b><a href="./viewNotice" style="color:#000000"><i class="fa fa-ellipsis-h fa-lg right"></i></a></h5>
 
                     <ul class="list-group">
                         <script type="text/javascript" src="{{Config::get('app.bbsUrl')}}/api.php?mod=js&bid=5"></script>
@@ -275,16 +275,6 @@
             js.src = "//connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.6&appId=396299537210860";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-
-        $(document).ready(function(){
-            var gameColorArray = [];
-            @foreach($gameData as $game)
-                <?php
-                    echo "gameColorArray[$game->gameID] = $game->gameColor;";
-                ?>
-            @endforeach
-
-        });
     </script>
 </body>
 </html>
