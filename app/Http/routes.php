@@ -78,3 +78,9 @@ Route::get('/admin/order','Admin\OrderController@showOrderPage');
 
 //----api----//
 Route::get('/api/games','Admin\GameController@getGamesByApi');
+
+//----Paypal----//
+Route::get('/paypal/checkout','PaypalController@showCheckout');
+Route::get('/paypal/success',function(){
+   return view('/paypalView/paymentSuccess');
+});

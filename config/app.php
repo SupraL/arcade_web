@@ -39,9 +39,11 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://arcadecrafts.net'),
-    
+    'url' => env('APP_URL', 'http://localhost/arcade_web/public/'),
     'bbsUrl' => env('BBS_URL','http://localhost/forum/'),
+    'paypalReturnUrl' => env('paypal_return_url','http://localhost/arcade_web/public/paypal/success'),
+    'aesPrivateKey' => env('aesPrivateKey','465dc8550233e395c7c4afd98d597c56'), //w34r3pk0n9k41
+    'aesIv' => env('aesIv','95e569ac9c665d319c5e51e4ef7858c0'), //re4dyt0c0d3
     'gam00001ForumNoticeBinding' => env('gam00001ForumNoticeBinding','api.php?mod=js&bid=4'),
     'gam00002ForumNoticeBinding' => env('gam00002ForumNoticeBinding',''),
     'gam00003ForumNoticeBinding' => env('gam00003ForumNoticeBinding',''),
