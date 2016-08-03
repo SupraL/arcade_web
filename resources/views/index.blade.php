@@ -31,7 +31,7 @@
             @foreach($gameData as $key=>$game)
                 <div class="item {{($key == 0)?'active':''}} view">
                     <img class="indexGameImage" src="./image/{{$game->gameID}}?bg=1" alt="First slide">
-                    <div class="mask pattern-2"></div>
+                    <div class="mask pattern-7"></div>
                     <div class="carousel-caption">
                         <div class="verticalcenter">
                             <div class="animated fadeInDown">
