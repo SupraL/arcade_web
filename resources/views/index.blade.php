@@ -29,14 +29,15 @@
         </ol>
         <div class="carousel-inner" role="listbox">
             @foreach($gameData as $key=>$game)
-                <div class="item {{($key == 0)?'active':''}}">
-
+                <div class="item {{($key == 0)?'active':''}} view">
                     <img class="indexGameImage" src="./image/{{$game->gameID}}?bg=1" alt="First slide">
-
+                    <div class="mask pattern-2"></div>
                     <div class="carousel-caption">
                         <div class="verticalcenter">
                             <div class="animated fadeInDown">
-                                <h3 class="h3-responsive">{{$game->gameName}}</h3>
+                                @if($game->isTitleShow)
+                                    <h3 class="h3-responsive">{{$game->gameName}}</h3>
+                                @endif
                                 <p>{!!html_entity_decode($game->gameDescription)  !!}</p>
                                 <a class="btn-floating btn-large red" href="./games/{{$game->gameID}}"><i class="fa fa-home"></i></a>
                                 <a class="btn-floating btn-large success-color-dark" href="./download"><i class="fa fa-download"></i></a>

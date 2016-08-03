@@ -65,3 +65,7 @@ nav ul li a{
     width:100%;
     bottom:0;
 }
+
+.pattern-2{
+    background: url(../img/overlays/02.png);
+}
