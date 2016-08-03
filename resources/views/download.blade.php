@@ -33,6 +33,55 @@
     <h3 class="h3-responsive">下載專區</h3>
     <hr/>
     <h5 class="h5-responsive"><b>遊戲主程式下載</b></h5>
+	<ul class="collection with-header">
+        <li class="collection-header">
+            <h4>Minecraft - 《戰爭創界》伺服器模組包</h4><br/>用戶進入伺服器必須安裝此模組包，否則將會出現無法進入伺服器的錯誤。</li>
+        <li class="collection-item">
+            <div>Google Drive （共 <mark>3</mark> 個分流）； 分流狀態：<abbr title="Available"><span class="label rgba-green-strong">一</span></abbr> <abbr title="Available"><span class="label rgba-green-strong">二</span></abbr> <abbr title="Disabled"><span class="label rgba-red-strong">三</span></abbr> <abbr title="Server provide: Google - https://drive.google.com/"><i class="fa fa-ellipsis-h fa-lg right"></i></abbr><a href="#!" class="secondary-content" data-toggle="modal" data-target="#myModal"><i class="fa fa-download fa-2x"></i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>One Drive<a href="#!" class="secondary-content" data-toggle="modal" data-target="#myModal"><i class="fa fa-download fa-2x"></i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>Dropbox<a href="#!" class="secondary-content" data-toggle="modal" data-target="#myModal"><i class="fa fa-download fa-2x"></i></a></div>
+        </li>
+        <li class="collection-item">
+            <div>BaiduYun 百度云<a href="#!" class="secondary-content" data-toggle="modal" data-target="#myModal"><i class="fa fa-download fa-2x"></i></a></div>
+        </li>
+    </ul>
 </div>
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Google Drive</h4>
+		  <p>《戰爭創界》伺服器模組包（～１２５ＭＢ）
+		  <li>若一個分流無法下載請嘗試其他的下載分流</li>
+		  <li>請不要惡意濫用下載服務，給予其他玩家一個好的體驗</li></p>
+        </div>
+        <div class="modal-body">
+          <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> 分流一 (建議)
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="options" id="option2" autocomplete="off"> 分流二
+  </label>
+  <label class="btn btn-primary" disabled>
+    <input type="radio" name="options" id="option3" autocomplete="off"> 分流三
+  </label>
+</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </body>
 </html>
