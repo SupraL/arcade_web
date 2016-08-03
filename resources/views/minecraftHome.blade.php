@@ -45,7 +45,7 @@
                 <div class="container">
 					<h4 class="h4-responsive">背景故事</h4>
                     <hr/>
-					<img src="https://na.cx/i/1J00Sn.jpg" height="500" style="display:block; margin:auto;"><br/><br/>
+					<img src="https://na.cx/i/1J00Sn.jpg" height="500" width="97%" style="display:block"><br/><br/>
                     <pre style="margin-right: 30px;word-wrap: break-word;white-space: pre-wrap">
 神話記載時期，冥界女神“凱拉”的兩位哥哥——“耶夢加得”和“芬里爾”，為了拯救他們的父親——“洛基”繼而引發「<abbr title="HyperText Markup Language" class="initialism">諸神的黃昏</abbr>」事件，導致大部分神族都因為這場戰難而陣亡，而剩下的神族都逃來到地球。而 “凱拉”想連最後的神族都殺光，是為了替她的父親和兩位哥哥報仇。<br/>
 在遠古時期(2016年~2099年)，“凱拉”找到他們後發動冰河魔法和死靈魔法企圖殺光他們，人類則因為她的施法而瀕危滅絕。地球最後剩下的種族，大多為半神族，剩餘的分別是神族以及因毒龍“尼德霍格”的血而腐化的神族及人族——統稱為魔族。人類由起初的地球之主削減成數量最少的種族。此時，已在數百年前逝去的“奧丁”及其餘神、人兩族的傳說英雄更把握機會趁機從冥界成功突破空間「桎梏」逃走，重返人間。因遺反冥界規條，身為冥界女神的“凱拉”不得不命令大量怪物來地球捉拿他們。<br/>

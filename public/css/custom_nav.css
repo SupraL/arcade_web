@@ -75,3 +75,14 @@ nav ul li a{
 .pattern-7{
     background: url(../img/overlays/07.png);
 }
+
+.alphaTextContainer{
+    background-color:rgba(0,0,0,0.6);
+    padding:20px;
+    *zoom:1;
+    border-radius:10px;
+}
+.alphaTextContainer p{
+    color: #FFFFFF;
+    position: relative;
+}
