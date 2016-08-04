@@ -24,6 +24,10 @@ Route::get('/aboutUs',function(){
     return view('aboutUs');
 });
 
+Route::get('/serviceInfo',function(){
+    return view('serviceInfo');
+});
+
 Route::post('/register','RegisterController@doReg');
 Route::get('/register',function(){
     return view('register');

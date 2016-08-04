@@ -37,6 +37,7 @@
                                 @if($game->isTitleShow)
                                     <h3 class="h3-responsive">{{$game->gameName}}</h3>
                                 @endif
+								<br/><br/><br/><br/><br/><br/><br/><br/>
                                 <div class="alphaTextContainer">
                                 <p>{!!html_entity_decode($game->gameDescription)  !!}</p>
                                 </div>
@@ -72,7 +73,7 @@
                     </div>
                 </div>
                 <a href="download"><button type="button" class="btn indexButton btn-lg btn-block">遊戲下載</button></a>
-                <a href="http://m.me/1746892298886678"><button type="button" class="btn indexButton btn-lg btn-block">支援服務</button></a>
+                <a href="/serviceInfo"><button type="button" class="btn indexButton btn-lg btn-block">支援服務</button></a>
                 <a href="http://bbs.arcadecrafts.net/"><button type="button" class="btn indexButton btn-lg btn-block">官方論壇</button></a>
             </div>
             <div class="col-md-4">

@@ -71,7 +71,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
 
                             <div class="card-title">
                                 <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Joannes Kim</h4>
-                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>工作室始創成員之一；擁有多年程式編程經驗，負責一切對外事務（客服、招募等）、所有內容（例如網站、討論區）策劃、籌備及管理、伺服器管理及維護、網頁編寫以及插件編程。</p></pre>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>工作室始創成員之一；擁有多年程式編程經驗，負責一切對外事務（客服、招募等）、所有內容（例如遊戲、網站及討論區）籌備策劃及管理、伺服器管理及維護、網頁編寫以及插件編程。</p></pre>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
                     <div class="col-sm-6 col-md-4 productItem">
                         <div class="card card-product">
                             <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
-                                <img class="img-circle" style="height:240px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
+                                <center><img class="img-circle" style="height:240px;width:240px;" src="/img/aboutUs/Toyal.png" alt="Generic placeholder image"></center>
                             </div>
 
                             <div class="card-title">
@@ -102,7 +102,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
 					<div class="col-sm-6 col-md-4 productItem">
                         <div class="card card-product">
                             <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
-                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
+                                <center><img class="img-circle" style="height:240px;width:240px;" src="/img/aboutUs/pokpok2007.png" alt="Generic placeholder image"></center>
                             </div>
 
                             <div class="card-title">
@@ -114,7 +114,7 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
                     <div class="col-sm-6 col-md-4 productItem">
                         <div class="card card-product">
                             <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
-                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-2.jpg" alt="Generic placeholder image">
+                                <center><img class="img-circle" style="height:240px;width:240px;" src="/img/aboutUs/nopic.png" alt="Generic placeholder image"></center>
                             </div>
 
                             <div class="card-title">

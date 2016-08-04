@@ -21,6 +21,12 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+				<li class="nav-item">
+                    <a class="nav-link" href="http://joinus.arcadecrafts.net/">加入我們</a>
+                </li>
+				<li class="nav-item">
+                    <a class="nav-link" href="/serviceInfo">客服中心</a>
+                </li>
                 <li class="nav-item">
                     @if (Session::has('username'))
                         <a class="nav-link" href="{{ URL::asset('/shop') }}">商店</a>
@@ -37,9 +43,6 @@
                     @else
                         <a class="nav-link" href="{{ URL::asset('/register') }}">免費註冊</a>
                     @endif
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">客服中心</a>
                 </li>
                 <li class="nav-item">
                     @if (Session::has('username'))
