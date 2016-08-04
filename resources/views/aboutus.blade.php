@@ -66,12 +66,48 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
                     <div class="col-sm-6 col-md-4 productItem">
                         <div class="card card-product">
                             <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <center><img class="img-circle" style="height:240px;width:240px;" src="/img/aboutUs/JoannesKim.png" alt="Generic placeholder image"></center>
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Joannes Kim</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>工作室始創成員之一；擁有多年程式編程經驗，負責一切對外事務（客服、招募等）、所有內容（例如網站、討論區）策劃、籌備及管理、伺服器管理及維護、網頁編寫以及插件編程。</p></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <center><img class="img-circle" style="height:240px;width:240px;" src="/img/aboutUs/MarcyL.png" alt="Generic placeholder image"></center>
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Marcy Li</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>工作室始創成員之一；擁有多年編寫程式、網頁的經驗，負責網頁設計及排版、軟件編程、插件編程。</p></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
+                                <img class="img-circle" style="height:240px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
+                            </div>
+
+                            <div class="card-title">
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Toyal Li</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>工作室始創成員之一；擁有多年編寫程式的經驗，負責軟件編程、插件編程、客戶服務以及遊戲內容的策劃及製作。</p></pre>
+                            </div>
+                        </div>
+                    </div>
+					<div class="col-sm-6 col-md-4 productItem">
+                        <div class="card card-product">
+                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
                                 <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-1.jpg" alt="Generic placeholder image">
                             </div>
 
                             <div class="card-title">
-                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">John Doe</h4>
-                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">POK</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>後期加入；擁有遊戲設計經驗，負責遊戲內容策劃及製作。</p></pre>
                             </div>
                         </div>
                     </div>
@@ -82,20 +118,8 @@ Arcade Crafts 遊戲工作室（以下簡稱本工作室）成立於2015年中�
                             </div>
 
                             <div class="card-title">
-                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Nathan Casie</h4>
-                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;">            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 productItem">
-                        <div class="card card-product">
-                            <div class="card-image waves-effect waves-block waves-light view overlay hm-white-slight">
-                                <img class="img-circle" style="height:250px;" src="http://mdbootstrap.com/wp-content/uploads/2015/10/team-avatar-3.jpg" alt="Generic placeholder image">
-                            </div>
-
-                            <div class="card-title">
-                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">Dave Snow</h4>
-                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;">            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p></pre>
+                                <h4 class="card-title text-center" style="color:#000000;margin-left:10px">二氧化碳</h4>
+                                <pre style="height:150px;font-size:12px;overflow-x:hidden;margin-left:5px;margin-right:5px;white-space: pre-wrap;"><p>後期加入；負責遊戲內容的製作。</p></pre>
                             </div>
                         </div>
                     </div>

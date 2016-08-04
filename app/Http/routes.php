@@ -21,7 +21,7 @@ Route::get('/viewNotice/{id}','NoticeController@showNotice');
 Route::get('/viewNotice','AllNoticeController@showNotice');
 
 Route::get('/aboutUs',function(){
-    return view('aboutus');
+    return view('aboutUs');
 });
 
 Route::post('/register','RegisterController@doReg');
